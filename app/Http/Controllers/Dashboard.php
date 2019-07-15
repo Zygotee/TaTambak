@@ -49,26 +49,26 @@ class Dashboard extends Controller
     }
     public function grafikAir()
     {
-        return view('layouts/admin/datatabel/tabel_air-admin');
+        return view('layouts/admin/grafik/grafik_air-admin');
     }
     public function grafikPh()
     {
-        return view('layouts/admin/master-admin');
+        return view('layouts/admin/grafik/grafik_ph-admin');
     }
     public function grafikSuhu()
     {
-        return view('layouts/admin/master-admin');
+        return view('layouts/admin/grafik/grafik_suhu-admin');
     }
     public function tabelAir()
     {
-        return view('layouts/admin/master-admin'); 
+        return view('layouts/admin/datatabel/tabel_air-admin'); 
     }
     public function tabelPh()
     {
-        return view('layouts/admin/master-admin'); 
+        return view('layouts/admin/datatabel/tabel_ph-admin'); 
     }
     public function tabelSuhu()
     {
-        return view('layouts/admin/master-admin'); 
+        return view('layouts/admin/datatabel/tabel_suhu-admin'); 
     }
 }
