@@ -16,12 +16,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($jarak as $jarak)
                     <tr>
-                        <td>15 Juli 2019</td>
-                        <td>4:24</td>
-                        <td>100</td>
-
+                        <td>{{date('Y-m-d', strtotime($jarak->tanggal))}}</td>
+                        <td>{{date('h:i:s', strtotime($jarak->tanggal))}}</td>
+                        <td>{{$jarak->nilai}}</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

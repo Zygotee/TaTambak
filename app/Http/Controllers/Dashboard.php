@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Admin;
+use App\Air;
+use App\pH;
+use App\Suhu;
 
 class Dashboard extends Controller
 {
@@ -61,14 +64,32 @@ class Dashboard extends Controller
     }
     public function tabelAir()
     {
-        return view('layouts/admin/datatabel/tabel_air-admin'); 
+        $data_jarak = Air::all();
+        return view('layouts/admin/datatabel/tabel_air-admin',
+            [
+                'jarak' => $data_jarak
+            ]
+        ); 
     }
     public function tabelPh()
     {
-        return view('layouts/admin/datatabel/tabel_ph-admin'); 
+        $data_ph = pH::all();
+        return view('layouts/admin/datatabel/tabel_ph-admin',
+            [
+                'pH' => $data_ph
+
+             ]
+        ); 
     }
     public function tabelSuhu()
     {
-        return view('layouts/admin/datatabel/tabel_suhu-admin'); 
+        $data_suhu = Suhu::all();
+        return view('layouts/admin/datatabel/tabel_suhu-admin',
+            [
+                'suhu' => $data_suhu
+
+             ]
+        
+        ); 
     }
 }

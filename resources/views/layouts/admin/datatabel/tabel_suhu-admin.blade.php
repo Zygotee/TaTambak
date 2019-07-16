@@ -16,12 +16,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($suhu as $suhu)                    
                     <tr>
-                        <td>17 Juli 2019</td>
-                        <td>4:32</td>
-                        <td>300</td>
-
+                            <td>{{date('Y-m-d', strtotime($suhu->tanggal))}}</td>
+                            <td>{{date('h:i:s', strtotime($suhu->tanggal))}}</td>
+                            <td>{{$suhu->nilai}}</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

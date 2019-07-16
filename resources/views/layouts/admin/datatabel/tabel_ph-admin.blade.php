@@ -16,12 +16,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($pH as $pH) 
                     <tr>
-                        <td>16 Juli 2019</td>
-                        <td>4:29</td>
-                        <td>200</td>
-
+                            <td>{{date('Y-m-d', strtotime($pH->tanggal))}}</td>
+                            <td>{{date('h:i:s', strtotime($pH->tanggal))}}</td>
+                            <td>{{$pH->nilai}}</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
