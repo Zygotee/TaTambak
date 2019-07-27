@@ -18,8 +18,8 @@
                 <tbody>
                     @foreach ($pH as $pH) 
                     <tr>
-                            <td>{{date('Y-m-d', strtotime($pH->tanggal))}}</td>
-                            <td>{{date('h:i:s', strtotime($pH->tanggal))}}</td>
+                            <td>{{date('Y-m-d', strtotime($pH->waktu))}}</td>
+                            <td>{{date('h:i:s', strtotime($pH->waktu))}}</td>
                             <td>{{$pH->nilai}}</td>
                     </tr>
                     @endforeach

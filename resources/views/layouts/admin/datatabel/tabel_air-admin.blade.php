@@ -18,8 +18,8 @@
                 <tbody>
                     @foreach ($jarak as $jarak)
                     <tr>
-                        <td>{{date('Y-m-d', strtotime($jarak->tanggal))}}</td>
-                        <td>{{date('h:i:s', strtotime($jarak->tanggal))}}</td>
+                        <td>{{date('Y-m-d', strtotime($jarak->waktu))}}</td>
+                        <td>{{date('h:i:s', strtotime($jarak->waktu))}}</td>
                         <td>{{$jarak->nilai}}</td>
                     </tr>
                     @endforeach

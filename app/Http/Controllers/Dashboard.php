@@ -52,19 +52,44 @@ class Dashboard extends Controller
     }
     public function grafikAir()
     {
-        return view('layouts/admin/grafik/grafik_air-admin');
-    }
+
+        $data_jarak = Air::select('nilai', 'waktu')->get();
+        return view('layouts/admin/grafik/grafik_air-admin',
+            [
+                'jarak' => $data_jarak,
+                'jar' => $data_jarak
+
+            ]
+    
+    );
+}
     public function grafikPh()
     {
-        return view('layouts/admin/grafik/grafik_ph-admin');
+        $data_ph = pH::select('nilai', 'waktu')->get();
+        
+        return view('layouts/admin/grafik/grafik_ph-admin',
+        [
+            'ph' => $data_ph,
+            'phh' => $data_ph 
+        ]
+    
+    );
     }
     public function grafikSuhu()
     {
-        return view('layouts/admin/grafik/grafik_suhu-admin');
+        $data_suhu = suhu::select('nilai', 'waktu')->get();
+        return view('layouts/admin/grafik/grafik_suhu-admin',
+    [
+        'suhu' => $data_suhu,
+        'suhuu' => $data_suhu
+
+    ]
+    
+    );
     }
     public function tabelAir()
     {
-        $data_jarak = Air::all();
+        $data_jarak = Air::select('id', 'waktu', 'nilai')->get();
         return view('layouts/admin/datatabel/tabel_air-admin',
             [
                 'jarak' => $data_jarak

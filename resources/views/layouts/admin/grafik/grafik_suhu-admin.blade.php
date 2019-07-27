@@ -3,7 +3,7 @@
 @section('content')
 <div class="card border">
     <div class="card-header">
-        <div class="card-title">Grafik Air</div>
+        <div class="card-title">Grafik Suhu</div>
     </div>
     <div class="card-body">
         <div class="chart-container">
@@ -19,9 +19,18 @@
     var myLineChart = new Chart(lineChart, {
         type: 'line',
         data: {
-            labels: ["00.00", "01.00", "02.00", "03.00", "04.00", "05.00", "06.00", "07.00", "08.00", "09.00", "10.00", "11.00", "12.00", "13.00", "14.00", "15.00", "16.00", "17.00", "18.00", "19.00", "20.00", "21,00", "22.00", "23.00"],
+            labels: [
+                @foreach ($suhu as $suhu)
+                @php
+                    $suhu = $suhu['waktu'];   
+                @endphp
+                    '{{"$suhu"}}',
+                    
+                @endforeach
+
+            ],
             datasets: [{
-                label: "Active Users",
+                label: "Data Suhu",
                 borderColor: "#1d7af3",
                 pointBorderColor: "#FFF",
                 pointBackgroundColor: "#1d7af3",
@@ -32,7 +41,17 @@
                 backgroundColor: 'rgba(62, 153, 250,0.4)',
                 fill: true,
                 borderWidth: 2,
-                data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 900, 650, 800, 230, 450, 480, 520, 589, 257, 257, 267, 456, 578, 400, 456]
+                data: [
+
+                    @foreach ($suhuu as $suhuu)
+                    @php
+                        $suhuu = $suhuu['nilai'];
+                    @endphp
+                        '{{"$suhuu"}}',
+                @endforeach
+
+
+                ]
             }]
         },
         options: {

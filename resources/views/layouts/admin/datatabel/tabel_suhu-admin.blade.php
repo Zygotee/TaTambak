@@ -18,8 +18,8 @@
                 <tbody>
                     @foreach ($suhu as $suhu)                    
                     <tr>
-                            <td>{{date('Y-m-d', strtotime($suhu->tanggal))}}</td>
-                            <td>{{date('h:i:s', strtotime($suhu->tanggal))}}</td>
+                            <td>{{date('Y-m-d', strtotime($suhu->waktu))}}</td>
+                            <td>{{date('h:i:s', strtotime($suhu->waktu))}}</td>
                             <td>{{$suhu->nilai}}</td>
                     </tr>
                     @endforeach
