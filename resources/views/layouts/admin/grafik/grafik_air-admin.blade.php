@@ -20,11 +20,11 @@
         type: 'line',
         data: {
             labels: [
-                @foreach ($jarak as $jarak)
+                @foreach ($jarak as $waktu)
                 @php
-                    $jarak = $jarak['waktu'];   
+                    $waktu = $waktu['waktu'];   
                 @endphp
-                    '{{"$jarak"}}',
+                    '{{"$waktu"}}',
                     
                 @endforeach
 
@@ -44,14 +44,18 @@
                 fill: true,
                 borderWidth: 2,
                 data: [
-                    @foreach ($jar as $jar)
+                    @foreach ($jar as $nilai)
                     @php
-                        $jar = $jar['nilai'];   
+                        $nilai = $nilai['nilai'];   
                     @endphp
-                        '{{"$jar"}}',
-                        
-                    @endforeach
+                        '{{"$nilai"}}',
+                    
+                @endforeach
                 ],
+                
+                    
+                    
+                
             }]
         },
         options: {

@@ -43,9 +43,10 @@
         $(document).ready(function() {
 			$('#tabel_ph').DataTable({
                 dom: 'Bfrtip',
-        buttons: [
-            'csv', 'excel'
-        ]
+                buttons: [
+                    'csv', 'excel'
+                ],
+                aaSorting: [[0, 'desc']]
             });
         });
     </script>

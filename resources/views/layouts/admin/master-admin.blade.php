@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Atlantis Lite - Bootstrap 4 Admin Dashboard</title>
+	<title>Tambak Udang Jaya</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="{{ asset('Atlantis/assets/img/icon.ico') }}" type="image/x-icon"/>
 
@@ -238,18 +238,6 @@
 								</ul>  --}}
 							</div>
 						</li>
-						<li class="nav-item {{Request::segment(2) === 'controlling' ? 'active' : null }}">
-							<a href="{{route('controlling.admin')}}">
-								<i class="fas fa-allergies"></i>
-								<p>Controlling</p>
-							</a>
-						</li>
-						<li class="nav-item {{Request::segment(2) === 'report' ? 'active' : null }}">
-							<a href="{{route('report.admin')}}">
-								<i class="fas fa-file-alt"></i>
-								<p>Report</p>
-							</a>
-						</li>
 					</ul>
 				</div>
 			</div>
@@ -264,27 +252,9 @@
 			</div>
 			<footer class="footer">
 				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
-							<li class="nav-item">
-								<a class="nav-link" href="https://www.themekita.com">
-									ThemeKita
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Help
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Licenses
-								</a>
-							</li>
-						</ul>
-					</nav>
+
 					<div class="copyright ml-auto">
-						2019, made with <i class="fa fa-heart heart text-danger"></i> by Bim </a>
+						2019, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.instagram.com/bimafajar">Bima</a> </a>
 					</div>				
 				</div>
 			</footer>

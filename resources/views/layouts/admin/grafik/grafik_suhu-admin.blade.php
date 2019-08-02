@@ -20,11 +20,11 @@
         type: 'line',
         data: {
             labels: [
-                @foreach ($suhu as $suhu)
+                @foreach ($suhu as $waktu)
                 @php
-                    $suhu = $suhu['waktu'];   
+                    $waktu = $waktu['waktu'];   
                 @endphp
-                    '{{"$suhu"}}',
+                    '{{"$waktu"}}',
                     
                 @endforeach
 
@@ -43,11 +43,11 @@
                 borderWidth: 2,
                 data: [
 
-                    @foreach ($suhuu as $suhuu)
+                    @foreach ($suhuu as $nilai)
                     @php
-                        $suhuu = $suhuu['nilai'];
+                        $nilai = $nilai['nilai'];
                     @endphp
-                        '{{"$suhuu"}}',
+                        '{{"$nilai"}}',
                 @endforeach
 
 

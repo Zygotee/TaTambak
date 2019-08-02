@@ -13,11 +13,16 @@ class Dashboard extends Controller
 {
     public function index()
     {
-
+        $air = Air::orderBy('waktu','desc');
+        $pH = pH::orderBy('waktu','desc');
+        $suhu = Suhu::orderBy('waktu','desc');
         $data =[
             'admin' => Admin::get(),
-
+            'd_air' => $air->pluck('nilai')->first(),
+            'd_pH' => $pH->pluck('nilai')->first(),
+            'd_suhu' => $suhu->pluck('nilai')->first()
         ];
+        // dd($data['d_air']);
         return view('layouts/admin/dashboard-admin', $data);
     }
     public function login()
@@ -54,6 +59,7 @@ class Dashboard extends Controller
     {
 
         $data_jarak = Air::select('nilai', 'waktu')->get();
+        
         return view('layouts/admin/grafik/grafik_air-admin',
             [
                 'jarak' => $data_jarak,
@@ -89,7 +95,7 @@ class Dashboard extends Controller
     }
     public function tabelAir()
     {
-        $data_jarak = Air::select('id', 'waktu', 'nilai')->get();
+        $data_jarak = Air::select('id', 'waktu', 'nilai')->orderBy('waktu','desc')->get();
         return view('layouts/admin/datatabel/tabel_air-admin',
             [
                 'jarak' => $data_jarak
@@ -98,7 +104,7 @@ class Dashboard extends Controller
     }
     public function tabelPh()
     {
-        $data_ph = pH::all();
+        $data_ph = pH::orderBy('waktu','desc')->get();
         return view('layouts/admin/datatabel/tabel_ph-admin',
             [
                 'pH' => $data_ph
@@ -108,7 +114,7 @@ class Dashboard extends Controller
     }
     public function tabelSuhu()
     {
-        $data_suhu = Suhu::all();
+        $data_suhu = Suhu::orderBy('waktu','desc')->get();
         return view('layouts/admin/datatabel/tabel_suhu-admin',
             [
                 'suhu' => $data_suhu
