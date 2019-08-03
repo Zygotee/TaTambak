@@ -28,6 +28,7 @@ Route::group(['middleware'=>'sesi','prefix'=>'admin'], function(){
     Route::get('/controlling', 'Controlling@index')->name('controlling.admin');
 //monitoring data tabel
     Route::get('monitoring/datatabel/air', 'Dashboard@tabelAir')->name('monitoring.tabel.air');
+    Route::get('monitoring/datatabel/airr', 'Dashboard@tabelAirr')->name('monitoring.tabel.airr');
     Route::get('monitoring/datatabel/suhu', 'Dashboard@tabelSuhu')->name('monitoring.tabel.suhu');
     Route::get('monitoring/datatabel/ph', 'Dashboard@tabelPh')->name('monitoring.tabel.ph');
 //monitoring grafik

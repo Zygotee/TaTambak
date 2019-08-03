@@ -33,7 +33,7 @@
     Circles.create({
         id:'circles-1',
         radius:45,
-        value:60,
+        value:{{$d_air}},
         maxValue:100,
         width:7,
         text: {{$d_air}},
@@ -48,7 +48,7 @@
     Circles.create({
         id:'circles-2',
         radius:45,
-        value:70,
+        value:{{$d_pH}},
         maxValue:100,
         width:7,
         text: {{$d_pH}},
@@ -63,7 +63,7 @@
     Circles.create({
         id:'circles-3',
         radius:45,
-        value:40,
+        value:{{$d_suhu}},
         maxValue:100,
         width:7,
         text: {{$d_suhu}},

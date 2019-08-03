@@ -298,14 +298,21 @@
 	<script src="{{ asset('Atlantis/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js') }}"></script>
 
 	<!-- Sweet Alert -->
-	<script src="{{ asset('Atlantis/assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
+	{{--  <script src="{{ asset('Atlantis/assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>  --}}
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 	<!-- Atlantis JS -->
 	<script src="{{ asset('Atlantis/assets/js/atlantis.min.js') }}"></script>
 
 	<script src="{{ asset('Atlantis/assets/js/setting-demo.js') }}"></script>
 	<script src="{{ asset('Atlantis/assets/js/demo.js') }}"></script>
+	<script type="text/javascript">
+	var url = ["{{route('monitoring.tabel.airr')}}"]
+	</script>
 	@yield('js')
+
+
 
 </body>
 </html>

@@ -7,6 +7,8 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
+                <button class="btn btn-primary" onclick="myFunction()">Normal</button>
+                <div id="tabelku">
             <table id="tabel_air" class="display table table-striped table-hover table-bordered" >
                 <thead>
                     <tr>
@@ -25,6 +27,7 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 </div>
@@ -49,5 +52,30 @@
                 aaSorting: [[0, 'desc']]
             });
         });
+        
+        var reload = window.setInterval('update()', 10000);
+        var update = function(){
+
+            $.ajax({
+				type: 'get',
+				url: url[0],
+				success:function(data) {
+                        if(data['nilai'] < 20)
+                        var text = data['nilai'].toString();
+                swal({
+                    title: "Suhu dibawah normal",
+                    text: text,
+                    icon : "error",
+                    buttons: true,
+                    dangerMode: true,
+                });
+                        console.log(data['nilai'])
+                        
+                       
+               }
+		    });
+        };
+        update();
     </script>
+    
 @endsection

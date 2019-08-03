@@ -19,7 +19,7 @@ class Dashboard extends Controller
         $data =[
             'admin' => Admin::get(),
             'd_air' => $air->pluck('nilai')->first(),
-            'd_pH' => $pH->pluck('nilai')->first(),
+            'd_pH' => floatval($pH->pluck('nilai')->first()),
             'd_suhu' => $suhu->pluck('nilai')->first()
         ];
         // dd($data['d_air']);
@@ -101,6 +101,12 @@ class Dashboard extends Controller
                 'jarak' => $data_jarak
             ]
         ); 
+    }
+    public function tabelAirr()
+    {
+        $data_jarak = Air::select('id', 'waktu', 'nilai')->orderBy('waktu','desc')->first();
+        return response()->json($data_jarak);
+
     }
     public function tabelPh()
     {
