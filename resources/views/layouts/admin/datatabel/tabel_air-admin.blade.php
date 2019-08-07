@@ -52,30 +52,5 @@
                 aaSorting: [[0, 'desc']]
             });
         });
-        
-        var reload = window.setInterval('update()', 10000);
-        var update = function(){
-
-            $.ajax({
-				type: 'get',
-				url: url[0],
-				success:function(data) {
-                        if(data['nilai'] < 20)
-                        var text = data['nilai'].toString();
-                swal({
-                    title: "Suhu dibawah normal",
-                    text: text,
-                    icon : "error",
-                    buttons: true,
-                    dangerMode: true,
-                });
-                        console.log(data['nilai'])
-                        
-                       
-               }
-		    });
-        };
-        update();
-    </script>
-    
+    </script> 
 @endsection
