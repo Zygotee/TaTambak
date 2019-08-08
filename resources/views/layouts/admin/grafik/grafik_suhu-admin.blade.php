@@ -21,11 +21,7 @@
         data: {
             labels: [
                 @foreach ($suhu as $waktu)
-                @php
-                    $waktu = $waktu['waktu'];   
-                @endphp
-                    '{{"$waktu"}}',
-                    
+                    "{{date('h:i:s',strtotime($waktu->waktu))}}",
                 @endforeach
 
             ],

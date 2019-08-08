@@ -20,12 +20,8 @@
         type: 'line',
         data: {
             labels: [
-                @foreach ($ph as $waktu)
-                @php
-                    $waktu = $waktu['waktu'];   
-                @endphp
-                    '{{"$waktu"}}',
-                    
+                @foreach ($ph as $waktu)            
+                    "{{date('h:i:s',strtotime($waktu->waktu))}}",                     
                 @endforeach
 
 

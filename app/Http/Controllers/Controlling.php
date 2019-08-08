@@ -8,6 +8,13 @@ class Controlling extends Controller
 {
     public function index()
     {
-        return view('layouts/admin/controlling-admin');
+        $data_motordc = Status::select('nilai','kondisi')->get();
+        
+        return view('layouts/admin/dashboard-admin',
+        [
+            'aktuator' => $data_motordc        
+        
+        ]
+    );
     }
 }

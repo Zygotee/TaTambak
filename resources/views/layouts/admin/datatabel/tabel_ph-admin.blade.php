@@ -57,7 +57,7 @@
 				type: 'get',
 				url: url[0],
 				success:function(data) {
-                        if(data['nilai'] < 6,5)
+                        if(data['nilai'] < 6.5)
                         var text = data['nilai'].toString();
                 swal({
                     title: "Konidisi pH tidak normal",

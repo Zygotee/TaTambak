@@ -59,7 +59,7 @@
                         if(data['nilai'] < 20 && > 30)
                         var text = data['nilai'].toString();
                 swal({
-                    title: "Suhu dibawah normal",
+                    title: "Suhu tidak normal",
                     text: text,
                     icon : "error",
                     buttons: true,

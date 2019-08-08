@@ -59,7 +59,7 @@ class Dashboard extends Controller
     {
 
         $data_jarak = Air::select('nilai', 'waktu')->get();
-        
+        // dd($data_jarak);
         return view('layouts/admin/grafik/grafik_air-admin',
             [
                 'jarak' => $data_jarak,
@@ -102,12 +102,7 @@ class Dashboard extends Controller
             ]
         ); 
     }
-    public function tabelAirr()
-    {
-        $data_jarak = Air::select('id', 'waktu', 'nilai')->orderBy('waktu','desc')->first();
-        return response()->json($data_jarak);
-
-    }
+   
     public function tabelPh()
     {
         $data_ph = pH::orderBy('waktu','desc')->get();

@@ -21,15 +21,9 @@
         data: {
             labels: [
                 @foreach ($jarak as $waktu)
-                @php
-                    $waktu = $waktu['waktu'];   
-                @endphp
-                    '{{"$waktu"}}',
-                    
+                    "{{date('h:i:s',strtotime($waktu->waktu))}}",
                 @endforeach
 
-            
-            
             ],
             datasets: [{
                 label: "Data Ketinggian",
