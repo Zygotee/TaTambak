@@ -50,7 +50,7 @@
 					<div class="container-login100-form-btn m-t-32">
 						<input type="submit" value="Login" class="login100-form-btn">
 						<div class="container-login100-form-btn m-t-32">
-							<a href="{{route('tamu.login')}}" style="color: red;">login sebagai tamu</a>
+							<a href="{{route('masuk.landing')}}" style="color: red;">Masuk ke Landing</a>
 						
 					</div>
 				</form>

@@ -20,15 +20,50 @@
                         <div class="px-2 pb-2 pb-md-0 text-center">
                             <div id="circles-3"></div>
                             <h6 class="fw-bold mt-3 mb-0">Data Suhu</h6>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-md-12">
+                <div class="card full-height">
+                    <div class="card-body">
+                        <div class="card-title">Kontrol Aktuator</div>
+                        <div class="card-category">Status Alat</div>
+                            <div class="form-group col-md-6 offset-md-3">
+                                <label class="form-label">Kondisi</label>
+                                <form action="{{route('update-status')}}" method="POST" id="controlForm">
+                                    @csrf
+                                    <div class="selectgroup w-100">
+                                        <label class="selectgroup-item">
+                                            <input type="radio" name="control" value="1" class="selectgroup-input" {{$akt == 1 ? 'checked' : null}}>
+                                            <span class="selectgroup-button">ON</span>
+                                        </label>
+                                        <label class="selectgroup-item">
+                                            <input type="radio" name="control" value="0" class="selectgroup-input" {{$akt == 0 ? 'checked' : null}}>
+                                            <span class="selectgroup-button">OFF</span>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
 @endsection
 @section('js')
+<script type='text/javascript'>
+
+    $(document).ready(function() { 
+      $('input[name=control]').change(function(){
+           $('#controlForm').submit();
+      });
+     });
+   
+</script>
 <script>
     Circles.create({
         id:'circles-1',
@@ -76,3 +111,5 @@
     })
 </script>
 @endsection
+
+

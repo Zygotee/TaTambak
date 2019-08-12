@@ -8,6 +8,6 @@ class Report extends Controller
 {
     public function index()
     {
-        return view('layouts/admin/report-admin');
+        return view('layouts/tamu/landing');
     }
 }

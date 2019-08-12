@@ -11,15 +11,18 @@
 |
 */
 //bagian admin
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('layouts/tamu/landing');
+});
 
 
 
 Auth::routes();
 
+
+
 //admin
+Route::get('/landing', 'Landing@masuklanding')->name('masuk.landing');
 Route::get('/login', 'Dashboard@login');
 Route::post('/login','Dashboard@loginproses')->name('proses.login');
 Route::group(['middleware'=>'sesi','prefix'=>'admin'], function(){
@@ -35,6 +38,8 @@ Route::group(['middleware'=>'sesi','prefix'=>'admin'], function(){
     Route::get('monitoring/grafik/air', 'Dashboard@grafikAir')->name('monitoring.grafik.air');
     Route::get('monitoring/grafik/suhu', 'Dashboard@grafikSuhu')->name('monitoring.grafik.suhu');
     Route::get('monitoring/grafik/ph', 'Dashboard@grafikPh')->name('monitoring.grafik.ph');
+// control aktuator
+    Route::post('update-control', 'Dashboard@Control')->name('update-status');
 
 });
     
@@ -43,6 +48,9 @@ Route::group(['middleware'=>'sesi','prefix'=>'admin'], function(){
 route::get('/admin/logout','Dashboard@logout')->name('proses.logout');
 
 //tamu
+
+Route::get('/tentang', 'Landing@tentang')->name('tentang.pembuat');
 Route::get('/login/logintamu', 'DashboardTamu@logintamu')->name('tamu.login');
 Route::get('/tamu', 'DashboardTamu@index')->name('home.tamu'); 
 Route::get('/report-tamu', 'ReportTamu@index')->name('report.tamu');
+
