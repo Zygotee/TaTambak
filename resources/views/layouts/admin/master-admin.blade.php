@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Tambak Udang Jaya</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{ asset('Atlantis/assets/img/icon.ico') }}" type="image/x-icon"/>
+	<link rel="icon" href="{{ asset('Atlantis/assets/img/logo1.ico') }}" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="{{ asset('Atlantis/assets/js/plugin/webfont/webfont.min.js') }}"></script>
@@ -30,7 +30,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
 				
-				<a href="index.html" class="logo">
+				<a href="{{route('masuk.landing')}}" class="logo">
 					<img src="{{ asset('Atlantis/assets/img/logo.svg')}}" alt="Tambak Udang" class="navbar-brand" style="height: 45px; margin-left: 10px;">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
