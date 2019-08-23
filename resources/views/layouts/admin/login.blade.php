@@ -33,7 +33,7 @@
 		<div class="container-login100" style="background-image: url({{ asset('Logintemp/images/bg-01.jpg')}});">
 			<div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-					TAMBAK UDANG
+				<a class="text-white" href="{{route('landingpage.read')}}">TAMBAK UDANG</a>	
 				</span>
 				<form action="{{route('proses.login')}}" method="POST" class="login100-form validate-form p-b-33 p-t-5">
 					@csrf
@@ -49,9 +49,6 @@
 
 					<div class="container-login100-form-btn m-t-32">
 						<input type="submit" value="Login" class="login100-form-btn">
-						<div class="container-login100-form-btn m-t-32">
-							<a href="{{route('masuk.landing')}}" style="color: red;">Beranda</a>
-						
 					</div>
 				</form>
 			</div>

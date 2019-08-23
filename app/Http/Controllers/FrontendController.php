@@ -6,27 +6,27 @@ use Illuminate\Http\Request;
 use App\Air;
 use App\pH;
 use App\Suhu;
+use App\Status;
+use App\Admin;
 
 class FrontendController extends Controller
 {
-    public function masuklanding()
+    public function index()
     {
-        {
-             $data_jarak = Air::select('id', 'waktu', 'nilai')->orderBy('waktu', 'desc')->get();
-             $data_suhu = Suhu::orderBy('waktu','desc')->get();
-             $data_ph = pH::orderBy('waktu', 'desc')->get();
-            return view(
-                'layouts/tamu/landing',
-                [
-                    'jarak' => $data_jarak,
-                    'suhu' => $data_suhu,
-                    'pH' => $data_ph
-                ]
-            );
-        }
+        $air = Air::orderBy('waktu', 'desc')->first();
+        $ph = pH::orderBy('waktu', 'desc')->first();
+        $suhu = Suhu::orderBy('waktu', 'desc')->first();
+        $data = [
+            'air' => $air,
+            'ph' => $ph,
+            'suhu' => $suhu
+        ];
+
+        return view('layouts.frontend.index', compact('data'));
     }
-    public function tentang()
+    
+    public function about()
     {
-        return view ('layouts/tamu/tentang');
+        return view ('layouts.frontend.about');
     }
 }

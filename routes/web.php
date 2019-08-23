@@ -11,11 +11,11 @@
 |
 */
 //Front End
-Route::get('/', 'FrontendController@masuklanding')->name('masuk.landing');
-Route::get('/tentang', 'LandFrontendControllering@tentang')->name('tentang.pembuat');
+Route::get('/', 'FrontendController@index')->name('landingpage.read');
+Route::get('/about', 'FrontendController@about')->name('landingpage.about');
 //Back End
 Auth::routes();
-Route::get('/login', 'DashboardController@login');
+Route::get('/login', 'DashboardController@login')->name('login.read');
 Route::post('/login','DashboardController@loginproses')->name('proses.login');
 route::get('/admin/logout','DashboardController@logout')->name('proses.logout');
 //admininstrator
