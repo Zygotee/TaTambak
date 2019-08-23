@@ -308,7 +308,7 @@
 	<script src="{{ asset('Atlantis/assets/js/setting-demo.js') }}"></script>
 	<script src="{{ asset('Atlantis/assets/js/demo.js') }}"></script>
 	<script type="text/javascript">
-	var url = ["{{route('monitoring.tabel.airr')}}"]
+	var url = ["{{route('monitoring.tabel.airr')}}","{{route('monitoring.tabel.jsonsuhu')}}","{{route('monitoring.tabel.jsonph')}}"]
 	</script>
 	@yield('js')
 

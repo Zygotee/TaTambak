@@ -11,9 +11,9 @@
 |
 */
 //bagian admin
-Route::get('/', function () {
-    return view('layouts/tamu/landing');
-});
+// Route::get('/', function () {
+//     return view('layouts/tamu/landing');
+// });
 
 
 
@@ -22,7 +22,7 @@ Auth::routes();
 
 
 //admin
-Route::get('/landing', 'Landing@masuklanding')->name('masuk.landing');
+Route::get('/', 'Landing@masuklanding')->name('masuk.landing');
 Route::get('/login', 'Dashboard@login');
 Route::post('/login','Dashboard@loginproses')->name('proses.login');
 Route::group(['middleware'=>'sesi','prefix'=>'admin'], function(){
@@ -34,12 +34,15 @@ Route::group(['middleware'=>'sesi','prefix'=>'admin'], function(){
     Route::get('monitoring/datatabel/airr', 'Dashboard@tabelAirr')->name('monitoring.tabel.airr');
     Route::get('monitoring/datatabel/suhu', 'Dashboard@tabelSuhu')->name('monitoring.tabel.suhu');
     Route::get('monitoring/datatabel/ph', 'Dashboard@tabelPh')->name('monitoring.tabel.ph');
+    Route::get('monitoring/datatabel/jsonph', 'Dashboard@jsonPh')->name('monitoring.tabel.jsonph');
+    Route::get('monitoring/datatabel/jsonsuhu', 'Dashboard@jsonsuhu')->name('monitoring.tabel.jsonsuhu');
 //monitoring grafik
     Route::get('monitoring/grafik/air', 'Dashboard@grafikAir')->name('monitoring.grafik.air');
     Route::get('monitoring/grafik/suhu', 'Dashboard@grafikSuhu')->name('monitoring.grafik.suhu');
     Route::get('monitoring/grafik/ph', 'Dashboard@grafikPh')->name('monitoring.grafik.ph');
 // control aktuator
     Route::post('update-control', 'Dashboard@Control')->name('update-status');
+    Route::post('update-mqtt','Dashboard@SendMsgViaMqtt')->name('update-mqtt');
 
 });
     

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Salman\Mqtt\MqttClass\Mqtt;
 use App\Admin;
 use App\Air;
 use App\pH;
@@ -16,6 +18,8 @@ class Dashboard extends Controller
     {
         //Control
         $data_motordc = Status::pluck('nilai')->first();
+       
+       
 
         $air = Air::orderBy('waktu', 'desc');
         $pH = pH::orderBy('waktu', 'desc');
@@ -113,18 +117,35 @@ class Dashboard extends Controller
 
     public function tabelPh()
     {
-        $data_ph = pH::orderBy('waktu', 'desc')->get();
+        $data_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'desc')->get();
+        $last_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'desc')->first();
         return view(
             'layouts/admin/datatabel/tabel_ph-admin',
             [
-                'pH' => $data_ph
+                'pH' => $data_ph,
+                'last_pH' => $last_ph
 
             ]
         );
     }
+
+    public function jsonPh()
+    {
+        // $data_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'desc')->get();
+        $last_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'desc')->first();
+        return response()->json($last_ph);
+    }
+
+    public function jsonsuhu()
+    {
+        // $data_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'desc')->get();
+        $last_suhu = suhu::select('id','waktu','nilai')->orderBy('waktu', 'desc')->first();
+        return response()->json($last_suhu);
+    }
+
     public function tabelSuhu()
     {
-        $data_suhu = Suhu::orderBy('waktu', 'desc')->get();
+        $data_suhu = Suhu::select('id','waktu','nilai')->orderBy('waktu', 'desc')->get();
         return view(
             'layouts/admin/datatabel/tabel_suhu-admin',
             [
@@ -136,23 +157,34 @@ class Dashboard extends Controller
     }
     public function Control(Request $request)
     {
+        $mqtt = new Mqtt();
         if(isset($request->control)){
             if($request->control == 1){
-                $kon = 'Nyala';
+                $hasil = 'Nyala';
             }
             else{
-                $kon = 'Mati';
+                $hasil = 'Mati';
             }
 
             $status = Status::find(1);
 
             $status->nilai = $request->control;
-            $status->kondisi = $kon;
+            $status->kondisi = $hasil;
                     
-            $status->save();
-
+            $status->save();  
+            
+            
+            $output = $mqtt->ConnectAndPublish("/Kontrol/MotorDC",$request->control);
+            if($output === true){
+                echo "berubah";
+            }
+            else{
+                echo "gagal";
+            }
+            
             return redirect()->back();
         }
         
     }
+   
 }

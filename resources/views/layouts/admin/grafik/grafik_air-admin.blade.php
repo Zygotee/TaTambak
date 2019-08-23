@@ -59,5 +59,19 @@
         }
     });
 </script>
+
+{{-- <script>
+function autoRefresh_div() {
+    $("#lineChart").load("#lineChart", function() {
+        setTimeout(autoRefresh_div, 10000);
+    });
+}
+
+autoRefresh_div();
+
+
+
+
+</script> --}}
     
 @endsection

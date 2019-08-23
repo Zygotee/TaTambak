@@ -60,6 +60,7 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Salman\\Mqtt\\' => 12,
         ),
         'R' => 
         array (
@@ -87,6 +88,7 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
         ),
         'L' => 
         array (
+            'Lzq\\Mqtt\\' => 9,
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
         ),
@@ -122,6 +124,7 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
         ),
         'B' => 
         array (
+            'Bluerhinos\\' => 11,
             'BeyondCode\\DumpServer\\' => 22,
         ),
         'A' => 
@@ -225,6 +228,10 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Salman\\Mqtt\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/salmanzafar/laravel-mqtt/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -260,6 +267,10 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Lzq\\Mqtt\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/luzhuqun/laravel-mqtt-publish/src',
         ),
         'League\\Flysystem\\' => 
         array (
@@ -317,6 +328,10 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'Bluerhinos\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bluerhinos/phpmqtt',
+        ),
         'BeyondCode\\DumpServer\\' => 
         array (
             0 => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src',
@@ -361,6 +376,7 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
 
     public static $classMap = array (
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
+        'App\\Air' => __DIR__ . '/../..' . '/app/Air.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
@@ -374,6 +390,7 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
         'App\\Http\\Controllers\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Controllers/Dashboard.php',
         'App\\Http\\Controllers\\DashboardTamu' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardTamu.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\Landing' => __DIR__ . '/../..' . '/app/Http/Controllers/Landing.php',
         'App\\Http\\Controllers\\Monitoring' => __DIR__ . '/../..' . '/app/Http/Controllers/Monitoring.php',
         'App\\Http\\Controllers\\Report' => __DIR__ . '/../..' . '/app/Http/Controllers/Report.php',
         'App\\Http\\Controllers\\ReportTamu' => __DIR__ . '/../..' . '/app/Http/Controllers/ReportTamu.php',
@@ -391,11 +408,15 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Status' => __DIR__ . '/../..' . '/app/Status.php',
+        'App\\Suhu' => __DIR__ . '/../..' . '/app/Suhu.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\pH' => __DIR__ . '/../..' . '/app/pH.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',
         'BeyondCode\\DumpServer\\RequestContextProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/RequestContextProvider.php',
+        'Bluerhinos\\phpMQTT' => __DIR__ . '/..' . '/bluerhinos/phpmqtt/phpMQTT.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
@@ -1933,6 +1954,10 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
         'League\\Flysystem\\Util\\ContentListingFormatter' => __DIR__ . '/..' . '/league/flysystem/src/Util/ContentListingFormatter.php',
         'League\\Flysystem\\Util\\MimeType' => __DIR__ . '/..' . '/league/flysystem/src/Util/MimeType.php',
         'League\\Flysystem\\Util\\StreamHasher' => __DIR__ . '/..' . '/league/flysystem/src/Util/StreamHasher.php',
+        'Lzq\\Mqtt\\Sam' => __DIR__ . '/..' . '/luzhuqun/laravel-mqtt-publish/src/Sam.php',
+        'Lzq\\Mqtt\\SamConnection' => __DIR__ . '/..' . '/luzhuqun/laravel-mqtt-publish/src/SamConnection.php',
+        'Lzq\\Mqtt\\SamMessage' => __DIR__ . '/..' . '/luzhuqun/laravel-mqtt-publish/src/SamMessage.php',
+        'Lzq\\Mqtt\\lib\\Mqtt' => __DIR__ . '/..' . '/luzhuqun/laravel-mqtt-publish/src/lib/Mqtt.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\Legacy\\TestListenerForV5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV5.php',
         'Mockery\\Adapter\\Phpunit\\Legacy\\TestListenerForV6' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/TestListenerForV6.php',
@@ -3085,6 +3110,10 @@ class ComposerStaticInit1b005ce2359ab271b6621b4f79ff881d
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'Salman\\Mqtt\\Facades\\Mqtt' => __DIR__ . '/..' . '/salmanzafar/laravel-mqtt/src/Facades/Mqtt.php',
+        'Salman\\Mqtt\\MqttClass\\Mqtt' => __DIR__ . '/..' . '/salmanzafar/laravel-mqtt/src/MqttClass/Mqtt.php',
+        'Salman\\Mqtt\\MqttClass\\MqttService' => __DIR__ . '/..' . '/salmanzafar/laravel-mqtt/src/MqttClass/MqttService.php',
+        'Salman\\Mqtt\\MqttServiceProvider' => __DIR__ . '/..' . '/salmanzafar/laravel-mqtt/src/MqttServiceProvider.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',

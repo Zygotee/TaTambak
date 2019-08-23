@@ -92,8 +92,6 @@
   <section class="features" id="features">
     <div class="container">
       <div class="section-heading text-center">
-        <h2>Unlimited Features, Unlimited Fun</h2>
-        <p class="text-muted">Check out what you can do with this app theme!</p>
         <hr>
         <div class="card">
           <div class="card-header">
@@ -125,7 +123,7 @@
                           <tbody>
                               @foreach ($jarak as $jarak)
                               <tr>
-                                  <td>{{date('d-m-Y', strtotime($jarak->waktu))}}</td>
+                                  <td>{{date('Y-m-d', strtotime($jarak->waktu))}}</td>
                                   <td>{{date('h:i:s', strtotime($jarak->waktu))}}</td>
                                   <td>{{$jarak->nilai}}</td>
                               </tr>
@@ -147,7 +145,7 @@
                           <tbody>
                               @foreach ($suhu as $suhu)                    
                               <tr>
-                                      <td>{{date('d-m-Y', strtotime($suhu->waktu))}}</td>
+                                      <td>{{date('Y-m-d', strtotime($suhu->waktu))}}</td>
                                       <td>{{date('h:i:s', strtotime($suhu->waktu))}}</td>
                                       <td>{{$suhu->nilai}}</td>
                               </tr>
@@ -181,20 +179,11 @@
             </div>
           </div>
         </div>
-        
       </div>
+    </div>
     </div>
   </section>
 
-  <section class="cta">
-    <div class="cta-content">
-      <div class="container">
-        <h2>Stop waiting.<br>Start building.</h2>
-        <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
-      </div>
-    </div>
-    <div class="overlay"></div>
-  </section>
 
   <section class="contact bg-primary" id="contact">
     <div class="container">
