@@ -66,7 +66,7 @@
         <div class="h1 mb-0 font-weight-bold"><span class="font-weight-500">Tambak Udang</span> Lokasi X</div>
       </div>
       <div class="col-12 col-sm-4 col-md-2 text-center">
-        <div class="h2 font-weight-bold">{{$data['air']->nilai}}</div>
+        <div class="h2 font-weight-bold">{{$data['air']->nilai}} cm</div>
         <div class="text-uppercase font-weight-bold ls-2 text-primary">Data Air</div>
       </div>
       <div class="col-12 col-sm-4 col-md-2 mb-4 mb-md-0 text-center">
@@ -74,7 +74,7 @@
         <div class="text-uppercase font-weight-bold ls-2 text-primary">Data pH</div>
       </div>
       <div class="col-12 col-sm-4 col-md-2 mb-4 mb-md-0 text-center">
-        <div class="h2 font-weight-bold">{{$data['suhu']->nilai}}</div>
+        <div class="h2 font-weight-bold">{{$data['suhu']->nilai}} &#176;C</div>
         <div class="text-uppercase font-weight-bold ls-2 text-primary">Data Suhu</div>
       </div>
     </div>
@@ -149,45 +149,46 @@
           <div class="features">
             <div class="feature">
               <div class="feature-icon">
-                <i class="fas fa-mobile-alt"></i>
+                <i class="fas fa-check"></i>
               </div>
               <h5>Aktif di Dasar Tambak</h5>
-              <p>Udang lalalalalallalala</p>
+              <p>Bergerak berenang aktif mencari makan
+                dengan kaki jalan pada dasar tambak</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
-                <i class="fas fa-columns"></i>
+                <i class="far fa-check-square"></i>
               </div>
               <h5>Posisi Udang</h5>
               <p>Jika Udang menempel di ranting, posisi kepala selalu di bawah, dan jika ranting digerakkan udang akan cepat menghindar. Sebaliknya udang yang sakit akan menempel terus di ranting meskipun ranting tersebut diangkat ke atas.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
-                <i class="fab fa-html5"></i>
+                <i class="far fa-check-circle"></i>
               </div>
               <h5>Aktivitas Berenang</h5>
               <p>Bergerak berenang aktif mencari makan dengan kaki jalan pada dasar tambak.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
-                <i class="fas fa-fire"></i>
+                <i class="fas fa-check"></i>
               </div>
               <h5>Waktu Berenang</h5>
               <p>Udang berenang atau menjauh bila kena sorotan cahaya pada malam hari.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
-                <i class="fas fa-check"></i>
+                <i class="fas fa-check-square"></i>
               </div>
               <h5>Posisi Kepala</h5>
               <p>Menempel pada batang / ranting rumput atau tali anco dengan posisi kepala di bawah dan akan berenang bila tali onco tersebut di angkat atau digerakkan.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
-                <i class="fas fa-chevron-right"></i>
+                <i class="fas fa-check-circle"></i>
               </div>
               <h5>Warna Kulit</h5>
-              <p>Berwaran cerah hijau kekuningan dengan warna belang tubuh yang jelas.</p>
+              <p>Berwarna cerah hijau kekuningan dengan warna belang tubuh yang jelas.</p>
             </div>
           </div>
         </div>
@@ -219,8 +220,9 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <h2>Batasan Sistem</h2>
-          <p class="lead">Dalam pembudidayaannya, perkembangan Udang Windu sangat dipengaruhi dengan Kualitas Air. Diantaranya adalah suhu air yang dapat mempengaruhi kecepatan metabolisme udang, semakin cepat suhu lingkungan meningkat, maka semakin cepat juga kecepatan metabolisme dari Udang. Secara umum, suhu optimal bagi Udang Windu adalah 25 – 30 0C. Suhu diatas 20 0C masih dianggap baik bagi budidaya Udang. Udang akan kurang aktif apabila suhu air turun di bawah 18 0C dan pada suhu 15 0C atau lebih rendah akan menyebabkan Udang Stress.</p>
+          <p style="text-align:justify;" class="lead ">Dalam pembudidayaannya, perkembangan Udang Windu sangat dipengaruhi dengan Kualitas Air. Diantaranya adalah suhu air yang dapat mempengaruhi kecepatan metabolisme udang, semakin cepat suhu lingkungan meningkat, maka semakin cepat juga kecepatan metabolisme dari Udang. Secara umum, suhu optimal bagi Udang Windu adalah 25 – 30 &#176;C . Suhu diatas 20 &#176;C masih dianggap baik bagi budidaya Udang. Udang akan kurang aktif apabila suhu air turun di bawah 18 &#176;C dan pada suhu 15 &#176;C atau lebih rendah akan menyebabkan Udang Stress. Derajat Keasaman pun menjadi indikator penting lainnya bagi pembudidayaan Udang Windu. Derajat Keasaman (pH) dapat mempengaruhi metabolisme dan proses fisiologis udang. Optimum pH untuk pertumbuhan Udang Windu adalah 6.5 – 8.5.</p>
         </div>
+        
       </div>
     </div>
   </section>
@@ -271,7 +273,7 @@
           <div class="row align-items-center">
             <div class="col-md-7 d-flex">
               <div class="card-icon bg-primary text-white">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-home"></i>
               </div>
               <div>
                 <h2>Masuk ke Sistem</h2>
@@ -293,7 +295,7 @@
         <div class="col-md-10">
           <h3 class="text-capitalize">Tentang</h3>
           <div class="pr-lg-5">
-            <p>Sistem ini dibuat oleh Bima Fajar Setiawan dengan memanfaatkan data lapangan dari Nur Kholid. Bertujuan agar data lapangan yang dikirim oleh saudara Nur Kholid dapat dimonitoring dan dicontrol melalui sistem informasi ini. Kontak kami di bfsetiawan@student.ce.undip.ac.id</p>
+            <p>Sistem ini dibuat oleh Bima Fajar Setiawan dengan memanfaatkan data lapangan dari Nur Kholid. Bertujuan agar data lapangan yang dikirim oleh saudara Nur Kholid dapat dimonitor dan dicontrol melalui sistem informasi ini. Kontak kami di bfsetiawan@student.ce.undip.ac.id (089610687965). </p>
 
             <p>&copy; Bima dengan <i class="fas fa-heart text-danger"></i> dari Indonesia</p>
           </div>
