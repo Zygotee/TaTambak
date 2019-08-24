@@ -60,18 +60,11 @@
     });
 </script>
 
-{{-- <script>
-function autoRefresh_div() {
-    $("#lineChart").load("#lineChart", function() {
-        setTimeout(autoRefresh_div, 10000);
-    });
-}
-
-autoRefresh_div();
-
-
-
-
-</script> --}}
+<script>
+function autoRefreshPage() {
+    window.location = window.location.href;
+    }
+    setInterval('autoRefreshPage()', 10000);
+</script>
     
 @endsection

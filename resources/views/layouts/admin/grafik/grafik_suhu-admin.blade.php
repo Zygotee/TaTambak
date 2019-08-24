@@ -57,5 +57,10 @@
         }
     });
 </script>
-    
+<script>
+    function autoRefreshPage() {
+        window.location = window.location.href;
+        }
+        setInterval('autoRefreshPage()', 10000);
+</script>
 @endsection
