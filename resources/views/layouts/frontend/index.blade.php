@@ -152,7 +152,7 @@
                 <i class="fas fa-check"></i>
               </div>
               <h5>Aktif di Dasar Tambak</h5>
-              <p>Bergerak berenang aktif mencari makan
+              <p >Bergerak berenang aktif mencari makan
                 dengan kaki jalan pada dasar tambak</p>
             </div>
             <div class="feature">
@@ -160,7 +160,7 @@
                 <i class="far fa-check-square"></i>
               </div>
               <h5>Posisi Udang</h5>
-              <p>Jika Udang menempel di ranting, posisi kepala selalu di bawah, dan jika ranting digerakkan udang akan cepat menghindar. Sebaliknya udang yang sakit akan menempel terus di ranting meskipun ranting tersebut diangkat ke atas.</p>
+              <p style="text-align:justify;">Jika Udang menempel di ranting, posisi kepala selalu di bawah, dan jika ranting digerakkan udang akan cepat menghindar. Sebaliknya udang yang sakit akan menempel terus di ranting meskipun ranting tersebut diangkat ke atas.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
@@ -181,7 +181,7 @@
                 <i class="fas fa-check-square"></i>
               </div>
               <h5>Posisi Kepala</h5>
-              <p>Menempel pada batang / ranting rumput atau tali anco dengan posisi kepala di bawah dan akan berenang bila tali onco tersebut di angkat atau digerakkan.</p>
+              <p style="text-align:justify;">Menempel pada batang / ranting rumput atau tali anco dengan posisi kepala di bawah dan akan berenang bila tali onco tersebut di angkat atau digerakkan.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
@@ -295,7 +295,15 @@
         <div class="col-md-10">
           <h3 class="text-capitalize">Tentang</h3>
           <div class="pr-lg-5">
-            <p>Sistem ini dibuat oleh Bima Fajar Setiawan dengan memanfaatkan data lapangan dari Nur Kholid. Bertujuan agar data lapangan yang dikirim oleh saudara Nur Kholid dapat dimonitor dan dicontrol melalui sistem informasi ini. Kontak kami di bfsetiawan@student.ce.undip.ac.id (089610687965). </p>
+            <p>Sistem ini dibuat oleh Bima Fajar Setiawan dengan memanfaatkan data lapangan dari Nur Kholid. Bertujuan agar data lapangan yang dikirim oleh saudara Nur Kholid dapat dimonitor dan dicontrol melalui sistem informasi ini. Kontak kami di:</p>
+            <p>
+                <i class="fa fa-envelope"></i>
+                bfsetiawan@student.ce.undip.ac.id
+            </p>
+            <p>
+              <i class= "fas fa-mobile-alt"></i>
+                089610687965
+            </p>
 
             <p>&copy; Bima dengan <i class="fas fa-heart text-danger"></i> dari Indonesia</p>
           </div>

@@ -106,7 +106,7 @@
 					<ul class="nav nav-primary">
 						<li class="nav-item {{Request::segment(2) === null ? 'active' : null }}" >
 							<a href="{{route('home.read')}}">
-								<i class="fas fa-layer-group"></i>
+								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 							</a>
 						</li>																		
@@ -179,7 +179,7 @@
 						@if (Auth::user()->role == 'Administrator')
 						<li class="nav-item" >
 							<a href="{{route('images.read')}}">
-								<i class="fas fa-layer-group"></i>
+								<i class="far fa-images"></i>
 								<p>Gallery</p>
 							</a>
 						</li>
