@@ -38,3 +38,8 @@ Route::post('/gallery/add/post', 'DashboardController@PostImages')->name('images
 Route::get('/gallery/edit/{id}', 'DashboardController@ReadEditImages')->name('images.edit');
 Route::post('/gallery/edit/post', 'DashboardController@PostEditImages')->name('images.edit.post');
 Route::post('/gallery/delete/', 'DashboardController@DeleteImages')->name('images.delete');
+//user
+Route::get('/user', 'DashboardController@ReadUser')->name('user.read');
+Route::post('/user/post', 'DashboardController@PostUser')->name('user.post');
+Route::post('/user/edit', 'DashboardController@EditUser')->name('user.edit');
+Route::post('/user/delete', 'DashboardController@DeleteUser')->name('user.delete');

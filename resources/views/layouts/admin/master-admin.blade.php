@@ -183,6 +183,13 @@
 								<p>Gallery</p>
 							</a>
 						</li>
+
+						<li class="nav-item" >
+							<a href="{{route('user.read')}}">
+								<i class="fas fa-user"></i>
+								<p>User</p>
+							</a>
+						</li>
 						@endif
 					</ul>
 				</div>

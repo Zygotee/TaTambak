@@ -12,6 +12,7 @@ use App\pH;
 use App\Suhu;
 use App\Status;
 use App\Gallery;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -165,13 +166,22 @@ class DashboardController extends Controller
 
     public function ReadImages()
     {
-        $datas = Gallery::get();
-        return view('layouts.admin.gallery.index', compact('datas'));
+        if (Auth::user()->role == 'Administrator') {  
+            $datas = Gallery::get();
+            return view('layouts.admin.gallery.index', compact('datas'));
+        }else{
+            return redirect(route('home.read'));
+        }
+
     }
 
     public function ReadAddImages()
     {
-        return view('layouts.admin.gallery.add');
+        if (Auth::user()->role == 'Administrator') { 
+            return view('layouts.admin.gallery.add');
+        }else{
+            return redirect(route('home.read'));
+        }
     }
 
     public function PostImages(Request $request)
@@ -203,9 +213,13 @@ class DashboardController extends Controller
 
     public function ReadEditImages($id)
     {
-        $data = Gallery::find($id);
-
-        return view('layouts.admin.gallery.edit', compact('data'));
+        if (Auth::user()->role == 'Administrator') { 
+            $data = Gallery::find($id);
+    
+            return view('layouts.admin.gallery.edit', compact('data'));
+        }else{
+            return redirect(route('home.read'));
+        }
     }
 
     public function PostEditImages(Request $request)
@@ -225,6 +239,49 @@ class DashboardController extends Controller
         $image->save();
 
         return back()->with('success', 'Data berhasil diupdate');
+    }
+
+    public function ReadUser()
+    {
+        if (Auth::user()->role == 'Administrator') { 
+            $datas = User::get();
+    
+            return view('layouts.admin.user.index', compact('datas'));
+        }else{
+            return redirect(route('home.read'));
+        }
+    }
+
+    public function PostUser(Request $request)
+    {
+        $data = new User();
+        $data->nama = $request->nama;
+        $data->email = $request->email;
+        $data->password = Hash::make($request->password);
+        $data->role = $request->role;
+        $data->save();
+
+        return back()->with('success', 'User berhasil ditambah');
+    }
+
+    public function EditUser(Request $request)
+    {
+        $data = User::find($request->id);
+        $data->nama = $request->nama;
+        $data->email = $request->email;
+        $data->role = $request->role;
+        $data->save();
+
+        return back()->with('success', 'User berhasil diedit');
+    }
+
+    public function DeleteUser(Request $request)    
+    {
+        $data = User::find($request->id);
+        $data->delete();
+
+        return back()->with('success', 'User berhasil dihapus');
+
     }
    
 }
