@@ -6,14 +6,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Salman\Mqtt\MqttClass\Mqtt;
-use App\Admin;
+use App\User;
 use App\Air;
 use App\pH;
 use App\Suhu;
 use App\Status;
+use App\Gallery;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //Control
@@ -22,7 +28,7 @@ class DashboardController extends Controller
         $pH = pH::orderBy('waktu', 'desc');
         $suhu = Suhu::orderBy('waktu', 'desc');
         $data = [
-            'admin' => Admin::get(),
+            'admin' => User::get(),
             'd_air' => $air->pluck('nilai')->first(),
             'd_pH' => floatval($pH->pluck('nilai')->first()),
             'd_suhu' => $suhu->pluck('nilai')->first(),
@@ -32,38 +38,6 @@ class DashboardController extends Controller
         return view('layouts/admin/dashboard-admin', $data);
     }
 
-    public function login()
-    {
-        return view('layouts/admin/login');
-    }
-
-    public function loginproses(Request $request)
-    {
-        // dd($request->all());
-        $email = $request['email'];
-        $password = $request['password'];
-        $admin = Admin::where('email', $email)->get();
-        if (count($admin) == 1) {
-            $data = Admin::where('email', $email)->first();
-            if (Hash::check($password, $data->password)) {
-                session([
-                    'nama' => $data->nama, 
-                    'role' => $data->role
-                ]);
-                return redirect('/admin');
-            } else {
-                echo 'Passowrd salah';
-            }
-        } else {
-            echo 'Email tidak terdaftar';
-        }
-    }
-
-    public function logout()
-    {
-        session()->flush();
-        return redirect('/login');
-    }
     public function grafikAir()
     {
 
@@ -156,6 +130,7 @@ class DashboardController extends Controller
 
         );
     }
+
     public function Control(Request $request)
     {
         $mqtt = new Mqtt();
@@ -186,6 +161,70 @@ class DashboardController extends Controller
             return redirect()->back();
         }
         
+    }
+
+    public function ReadImages()
+    {
+        $datas = Gallery::get();
+        return view('layouts.admin.gallery.index', compact('datas'));
+    }
+
+    public function ReadAddImages()
+    {
+        return view('layouts.admin.gallery.add');
+    }
+
+    public function PostImages(Request $request)
+    {
+        $this->validate($request, [
+            'nama' => 'required',
+            'foto' => 'required|mimes:jpeg,jpg,png|max:2048'
+        ]);
+
+        $foto = $request->file('foto');
+        $filename = $request->nama.'_'.$foto->getClientOriginalName();
+        $request->file('foto')->move('public/storage', $filename);
+        
+        $image = new Gallery();
+        $image->nama = $request->nama;
+        $image->foto = $filename;
+        $image->save();
+
+        return redirect(route('images.read'))->with('success', 'Gambar berhasil ditambah');
+    }
+
+    public function DeleteImages(Request $request)
+    {
+        $data = Gallery::find($request->id);
+        $data->delete();
+
+        return back()->with('success', 'Gambar berhasil dihapus');
+    }
+
+    public function ReadEditImages($id)
+    {
+        $data = Gallery::find($id);
+
+        return view('layouts.admin.gallery.edit', compact('data'));
+    }
+
+    public function PostEditImages(Request $request)
+    {
+        $this->validate($request, [
+            'nama' => 'required',
+            'foto' => 'required|mimes:jpeg,jpg,png|max:2048'
+        ]);
+
+        $foto = $request->file('foto');
+        $filename = $request->nama.'_'.$foto->getClientOriginalName();
+        $request->file('foto')->move('public/storage', $filename);
+        
+        $image = Gallery::find($request->id);
+        $image->nama = $request->nama;
+        $image->foto = $filename;
+        $image->save();
+
+        return back()->with('success', 'Data berhasil diupdate');
     }
    
 }

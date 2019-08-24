@@ -15,11 +15,8 @@ Route::get('/', 'FrontendController@index')->name('landingpage.read');
 Route::get('/about', 'FrontendController@about')->name('landingpage.about');
 //Back End
 Auth::routes();
-Route::get('/login', 'DashboardController@login')->name('login.read');
-Route::post('/login','DashboardController@loginproses')->name('proses.login');
-route::get('/admin/logout','DashboardController@logout')->name('proses.logout');
 //admininstrator
-Route::get('/admin', 'DashboardController@index')->name('home.admin');
+Route::get('/home', 'DashboardController@index')->name('home.read');
 //monitoring data tabel
 Route::get('monitoring/datatabel/air', 'DashboardController@tabelAir')->name('monitoring.tabel.air');
 Route::get('monitoring/datatabel/airr', 'DashboardController@tabelAirr')->name('monitoring.tabel.airr');
@@ -34,3 +31,10 @@ Route::get('monitoring/grafik/ph', 'DashboardController@grafikPh')->name('monito
 // control aktuator
 Route::post('update-control', 'DashboardController@Control')->name('update-status');
 Route::post('update-mqtt','DashboardController@SendMsgViaMqtt')->name('update-mqtt');
+// gallery
+Route::get('/gallery', 'DashboardController@ReadImages')->name('images.read');
+Route::get('/gallery/add', 'DashboardController@ReadAddImages')->name('images.add');
+Route::post('/gallery/add/post', 'DashboardController@PostImages')->name('images.post');
+Route::get('/gallery/edit/{id}', 'DashboardController@ReadEditImages')->name('images.edit');
+Route::post('/gallery/edit/post', 'DashboardController@PostEditImages')->name('images.edit.post');
+Route::post('/gallery/delete/', 'DashboardController@DeleteImages')->name('images.delete');

@@ -1,73 +1,72 @@
-@extends('layouts.app')
-
+@extends('layouts.logreg')
 @section('content')
-<div class="container">
+<br><br><br>
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+        <div class="col-md-4" style="text-align:center;">
+            <a href="{{route('landingpage.read')}}" class="logo">
+                <img src="{{ asset('Atlantis/assets/img/logo1.svg')}}" alt="Tambak Udang" class="navbar-brand" style="height: 70px;">
+            </a>
+        </div>
+    </div>
+    <br><br>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card" style="max-height:310px;">
+                <div class="wrapper wrapper-login">
+                    <div class="container container-login animated fadeIn">
+                        <br>
+                        <h3 class="text-center">Sign In</h3>
+                        <form action="{{route('login')}}" method="post">
+                            @csrf
+                        <div class="login-form">
+                            <div class="form-group form-floating-label">
+                                <input id="email" name="email" type="email" class="form-control input-border-bottom @error('email') is-invalid @enderror" value="{{ old('email') }}" required>
+                                <label for="email" class="placeholder">Email</label>
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                            
+                            <div class="form-group form-floating-label">
+                                <input id="myInput" name="password" type="password" class="form-control input-border-bottom @error('password') is-invalid @enderror" value="{{ old('password') }}" required>
+                                <label for="password" class="placeholder">Password</label>
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                            <div class="row form-sub ml-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="showpassword" onclick="showPassword()">
+                                    <label class="custom-control-label" for="showpassword">Show Password</label>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                            <br>
+                            <div class="form-action mb-3" style="text-align:center">
+                                <button type="submit" class="btn btn-lg btn-primary btn-rounded btn-login">Sign In</button>
                             </div>
                         </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@section('js')
+<script>
+    function showPassword() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+</script>
+    
+@endsection
 @endsection

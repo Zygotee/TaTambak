@@ -34,7 +34,7 @@
         <ul class="navbar-nav ml-auto align-items-lg-center">
           <li class="nav-item"><a href="#about" class="nav-link">Tentang</a></li>
           <li class="ml-lg-3 nav-item">
-            <a href="{{route('login.read')}}" class="btn btn-round smooth btn-icon icon-left" target="_blank">Masuk
+            <a href="{{route('login')}}" class="btn btn-round smooth btn-icon icon-left">Masuk
             </a>
           </li>
         </ul>
@@ -52,9 +52,9 @@
           </p>
         </div>
         <div class="imgbox">
-          <img src="{{asset('LandingPage/images/demo1.png')}}" class="imgpreview">
-          <img src="{{asset('LandingPage/images/demo2.png')}}" class="imgpreview">
-          <img src="{{asset('LandingPage/images/demo3.png')}}" class="imgpreview">
+          @foreach ($data['foto'] as $item)
+            <img src="public/storage/{{$item->foto}}" class="imgpreview">
+          @endforeach
         </div>
       </div>
     </div>
@@ -230,10 +230,10 @@
       <div class="row">
         <div class="col-lg-8 d-none d-lg-block pr-lg-5 pr-sm-0">
           <div class="d-flex align-items-center h-100 justify-content-center abs-images-2">
-            <img src="{{asset('LandingPage/images/demo3.png')}}" alt="image" class="img-fluid rounded dark-shadow">
-            <img src="{{asset('LandingPage/images/demo2.png')}}" alt="image" class="img-fluid rounded dark-shadow">
-            <img src="{{asset('LandingPage/images/demo1.png')}}" alt="image" class="img-fluid rounded dark-shadow">
-          </div>
+            <img src="{{asset('images/documentation-3.jpg')}}" alt="image" class="img-fluid rounded dark-shadow">
+            <img src="{{asset('images/documentation-2.jpg')}}" alt="image" class="img-fluid rounded dark-shadow">
+            <img src="{{asset('images/documentation-1.jpg')}}" alt="image" class="img-fluid rounded dark-shadow">
+          </div>`
         </div>
         <div class="col-lg-4 col-md-12">
           <h2>Pengelolaan <span class="text-primary">Pakan.</span> </h2>
@@ -279,7 +279,7 @@
               </div>
             </div>
             <div class="col-md-5 text-right">
-              <a href="{{route('login.read')}}" class="btn btn-primary btn-lg">Masuk</a>
+              <a href="{{route('login')}}" class="btn btn-primary btn-lg">Masuk</a>
             </div>
           </div>
         </div>

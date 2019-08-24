@@ -64,13 +64,16 @@
 										<div class="user-box">
 											<div class="avatar-lg"><img src="{{ asset('Atlantis/assets/img/profile.jpg')}}" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4>{{session('nama')}}</h4>
-												<p class="text-muted">{{session('role')}}</p>
+												<h4>{{Auth::user()->nama}}</h4>
+												<p class="text-muted">{{Auth::user()->role}}</p>
 											</div>
 										</div>
 									</li>
 									<li>
-										<a href="{{route('proses.logout')}}" class="btn btn-xs btn-secondary btn-sm ml-3">Logout</a>
+										<form action="{{route('logout')}}" method="post">
+										@csrf
+											<button type="submit" class="btn btn-xs btn-secondary btn-sm ml-3">Keluar</button>
+										</form>
 									</li>
 								</div>
 							</ul>
@@ -92,8 +95,8 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									{{session('nama')}}
-									<span class="user-level">Admin</span>
+									{{Auth::user()->nama}}
+									<span class="user-level">{{Auth::user()->role}}</span>
 	
 								</span>
 							</a>
@@ -102,38 +105,38 @@
 					</div>
 					<ul class="nav nav-primary">
 						<li class="nav-item {{Request::segment(2) === null ? 'active' : null }}" >
-							<a href="{{route('home.admin')}}">
+							<a href="{{route('home.read')}}">
 								<i class="fas fa-layer-group"></i>
 								<p>Dashboard</p>
 							</a>
 						</li>																		
-						<li class="nav-item {{request()->is('admin/monitoring/*/*') ? 'active' : '' }}">
-							<a data-toggle="collapse" {{request()->is('admin/monitoring/*/*') ? 'aria-expanded="true"' : '' }} href="#submenu">
+						<li class="nav-item {{request()->is('monitoring/*/*') ? 'active' : '' }}">
+							<a data-toggle="collapse" {{request()->is('monitoring/*/*') ? 'aria-expanded="true"' : '' }} href="#submenu">
 								<i class="far fa-chart-bar"></i>
 								<p>Monitoring</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse {{request()->is('admin/monitoring/*/*') ? 'show' : '' }}" id="submenu">
+							<div class="collapse {{request()->is('monitoring/*/*') ? 'show' : '' }}" id="submenu">
 								<ul class="nav nav-collapse">
 									<li>
-										<a data-toggle="collapse" {{request()->is('admin/monitoring/grafik/*') ? 'aria-expanded="true"' : '' }} href="#subnav1">
+										<a data-toggle="collapse" {{request()->is('monitoring/grafik/*') ? 'aria-expanded="true"' : '' }} href="#subnav1">
 											<span class="sub-item">Grafik</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse {{request()->is('admin/monitoring/grafik/*') ? 'show' : '' }}" id="subnav1">
+										<div class="collapse {{request()->is('monitoring/grafik/*') ? 'show' : '' }}" id="subnav1">
 											<ul class="nav nav-collapse subnav">
-												<li class="{{request()->is('admin/monitoring/grafik/suhu') ? 'active' : '' }}">
+												<li class="{{request()->is('monitoring/grafik/suhu') ? 'active' : '' }}">
 													<a href="{{route('monitoring.grafik.suhu')}}">
 														<span class="sub-item">Suhu</span>
 													</a>
 												</li>
 												<li>
-												<li class="{{request()->is('admin/monitoring/grafik/air') ? 'active' : '' }} ">
+												<li class="{{request()->is('monitoring/grafik/air') ? 'active' : '' }} ">
 												<a href="{{route('monitoring.grafik.air')}}">
 														<span class="sub-item">Air</span>
 													</a>
 												</li>
-												<li class="{{request()->is('admin/monitoring/grafik/ph') ? 'active' : '' }}" >
+												<li class="{{request()->is('monitoring/grafik/ph') ? 'active' : '' }}" >
 														<a href="{{route('monitoring.grafik.ph')}}">
 															<span class="sub-item">PH</span>
 														</a>
@@ -173,6 +176,14 @@
 								</ul>  --}}
 							</div>
 						</li>
+						@if (Auth::user()->role == 'Administrator')
+						<li class="nav-item" >
+							<a href="{{route('images.read')}}">
+								<i class="fas fa-layer-group"></i>
+								<p>Gallery</p>
+							</a>
+						</li>
+						@endif
 					</ul>
 				</div>
 			</div>
