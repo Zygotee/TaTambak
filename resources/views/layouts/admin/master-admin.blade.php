@@ -104,7 +104,8 @@
 						</div>
 					</div>
 					<ul class="nav nav-primary">
-						<li class="nav-item {{Request::segment(2) === null ? 'active' : null }}" >
+						{{-- <li class="nav-item {{Request::segment(2) === '' ? 'active' : '' }}" > --}}
+						<li class="nav-item {{request()->is('home') ? 'active' : '' }}">
 							<a href="{{route('home.read')}}">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
@@ -145,23 +146,23 @@
 										</div>
 									</li>
 									<li >
-										<a data-toggle="collapse" {{request()->is('admin/monitoring/datatabel/*') ? 'aria-expanded="true"' : '' }} href="#subnav2">
+										<a data-toggle="collapse" {{request()->is('monitoring/datatabel/*') ? 'aria-expanded="true"' : '' }} href="#subnav2">
 											<span class="sub-item">Data Tabel</span>
 											<span class="caret"></span>
 										</a>
-										<div class="collapse {{request()->is('admin/monitoring/datatabel/*') ? 'show' : '' }}" id="subnav2">
+										<div class="collapse {{request()->is('monitoring/datatabel/*') ? 'show' : '' }}" id="subnav2">
 											<ul class="nav nav-collapse subnav">
-													<li class="{{request()->is('admin/monitoring/datatabel/suhu') ? 'active' : '' }}">
+													<li class="{{request()->is('monitoring/datatabel/suhu') ? 'active' : '' }}">
 													<a href="{{route('monitoring.tabel.suhu')}}">
 														<span class="sub-item">Suhu</span>
 													</a>
 												</li>
-												<li class="{{request()->is('admin/monitoring/datatabel/air') ? 'active' : '' }}">
+												<li class="{{request()->is('monitoring/datatabel/air') ? 'active' : '' }}">
 													<a href="{{route('monitoring.tabel.air')}}">
 														<span class="sub-item">Air</span>
 													</a>
 												</li>
-												<li class="{{request()->is('admin/monitoring/datatabel/ph') ? 'active' : '' }}">
+												<li class="{{request()->is('monitoring/datatabel/ph') ? 'active' : '' }}">
 														<a href="{{route('monitoring.tabel.ph')}}">
 															<span class="sub-item">PH</span>
 														</a>
@@ -176,15 +177,16 @@
 								</ul>  --}}
 							</div>
 						</li>
-						@if (Auth::user()->role == 'Administrator')
-						<li class="nav-item" >
+						@if (Auth::user()->role == 'Administrator')						
+						<li class="nav-item {{request()->is('gallery') ? 'active' : ''}}">
 							<a href="{{route('images.read')}}">
 								<i class="far fa-images"></i>
 								<p>Gallery</p>
+								
 							</a>
 						</li>
-
-						<li class="nav-item" >
+							
+						<li class="nav-item {{request()->is('user') ? 'active' : ''}}">
 							<a href="{{route('user.read')}}">
 								<i class="fas fa-user"></i>
 								<p>User</p>
