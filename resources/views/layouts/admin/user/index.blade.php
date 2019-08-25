@@ -23,10 +23,10 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">Users</h4>
+                        <h4 class="card-title">Pengguna</h4>
                         <button class="btn btn-primary btn-round ml-auto" data-target="#addRowModal" data-toggle="modal">
                             <i class="fa fa-plus"></i>
-                            Add Data
+                           Tambah Data
                         </button>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                         <table id="multi-filter-select" class="display table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>No</td>
+                                    <th>No.</td>
                                     <th>Nama</th>
                                     <th class="text-center">Email</th>
                                     <th class="text-center">Role</th>

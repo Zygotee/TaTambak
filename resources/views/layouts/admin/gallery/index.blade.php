@@ -23,10 +23,10 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">Gallery</h4>
+                        <h4 class="card-title">Galeri</h4>
                         <a href="{{route('images.add')}}" class="btn btn-primary btn-round ml-auto" data-target="#addRowModal">
                             <i class="fa fa-plus"></i>
-                            Add Data
+                            Tambah Data
                         </a>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                         <table id="multi-filter-select" class="display table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>No</td>
+                                    <th>No.</td>
                                     <th>Nama</th>
                                     <th class="text-center">Foto</th>
                                     <th class="text-center" style="width: 10%">Action</th>
@@ -65,7 +65,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header no-bd">
                                                 <h5 class="modal-title">
-                                                    <span class="fw-mediumbold">Delete Data</span>
+                                                    <span class="fw-mediumbold">Hapus Data</span>
                                                 </h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -80,7 +80,7 @@
                                                 <input type="hidden" name="id" value="{{$item->id}}">
                                                 <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
                                             
-                                                <button type="submit" class="btn btn-danger">Delete Data</button>
+                                                <button type="submit" class="btn btn-danger">Hapus Data</button>
                                             </form>
                                             </div>
                                         </div>

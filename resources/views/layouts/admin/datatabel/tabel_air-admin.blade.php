@@ -7,7 +7,6 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-                <button class="btn btn-primary" onclick="myFunction()">Normal</button>
                 <div id="tabelku">
             <table id="tabel_air" class="display table table-striped table-hover table-bordered" >
                 <thead>

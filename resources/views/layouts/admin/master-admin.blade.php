@@ -181,7 +181,7 @@
 						<li class="nav-item {{request()->is('gallery') ? 'active' : ''}}">
 							<a href="{{route('images.read')}}">
 								<i class="far fa-images"></i>
-								<p>Gallery</p>
+								<p>Galeri</p>
 								
 							</a>
 						</li>
@@ -189,7 +189,7 @@
 						<li class="nav-item {{request()->is('user') ? 'active' : ''}}">
 							<a href="{{route('user.read')}}">
 								<i class="fas fa-user"></i>
-								<p>User</p>
+								<p>Pengguna</p>
 							</a>
 						</li>
 						@endif

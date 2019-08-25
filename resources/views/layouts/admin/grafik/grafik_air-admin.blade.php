@@ -9,9 +9,9 @@
         <div class="chart-container">
             <canvas id="lineChart"></canvas>
         </div>
+        <h5><span class="text-primary">Satuan grafik ketinggian air dalam centimeter (cm)</span></h5>
     </div>
 </div>
-
 @endsection
 @section('js')
 <script>
