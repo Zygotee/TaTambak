@@ -56,7 +56,7 @@
                                     <td class="text-center">{{$item->role}}</td>
                                     <td class="text-center">
                                         <div class="form-button-action">
-                                        <button data-toggle="modal" data-target="#edit-{{$item->id}}" class="btn btn-link btn-primary" data-original-title="Edit Data"><i class="fa fa-edit"></i></button>
+                                        <button data-toggle="modal" data-target="#edit-{{$item->id}}" class="btn btn-link btn-primary" data-original-title="Ubah Data"><i class="fa fa-edit"></i></button>
                                         <button title="Remove Data" class="btn btn-link btn-danger" data-toggle="modal" data-target="#delete-{{$item->id}}"><i class="fa fa-times"></i></button>
                                         </div>
                                     </td>
@@ -68,7 +68,7 @@
                                             <div class="modal-header no-bd">
                                                 <h5 class="modal-title">
                                                     <span class="fw-mediumbold">
-                                                    Edit Data</span>
+                                                    Ubah Data</span>
                                                 </h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -103,8 +103,8 @@
                                                     </div>
                                             </div>
                                             <div class="modal-footer no-bd">
-                                                <button type="submit" class="btn btn-primary">Edit Data</button>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Ubah Data</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                                             </div>
                                         </form>
                                         </div>
@@ -115,7 +115,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header no-bd">
                                                 <h5 class="modal-title">
-                                                    <span class="fw-mediumbold">Delete Data</span>
+                                                    <span class="fw-mediumbold">Hapus Data</span>
                                                 </h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -128,9 +128,9 @@
                                             </div>
                                             <div class="modal-footer no-bd">
                                                 <input type="hidden" name="id" value="{{$item->id}}">
-                                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-link" data-dismiss="modal">Tutup</button>
                                             
-                                                <button type="submit" class="btn btn-danger">Delete Data</button>
+                                                <button type="submit" class="btn btn-danger">Hapus Data</button>
                                             </form>
                                             </div>
                                         </div>
@@ -154,7 +154,7 @@
             <div class="modal-header no-bd">
                 <h5 class="modal-title">
                     <span class="fw-mediumbold">
-                    Add Data</span>
+                    Tambah Data</span>
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -179,7 +179,7 @@
                         <div class="col-md-12">
                             <div class="form-group form-group-default">
                                 <label>Password</label>
-                                <input name="password" type="password" class="form-control" placeholder="fill email">
+                                <input name="password" type="password" class="form-control" placeholder="fill password">
                             </div>
                         </div>
                         <div class="col-md-12"><div class="form-group form-group-default">
@@ -193,8 +193,8 @@
                     </div>
             </div>
             <div class="modal-footer no-bd">
-                <button type="submit" class="btn btn-primary">Add Data</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Tambah Data</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
             </div>
         </form>
         </div>

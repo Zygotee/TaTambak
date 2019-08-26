@@ -54,7 +54,7 @@
                                     <td class="text-center"><a href="public/storage/{{$item->foto}}" target="_blank">{{$item->foto}}</a></td>
                                     <td>
                                         <div class="form-button-action">
-                                            <a href="{{route('images.edit', $item->id)}}" data-toggle="tooltip" class="btn btn-link btn-primary" data-original-title="Edit Data"><i class="fa fa-edit"></i></a>
+                                            <a href="{{route('images.edit', $item->id)}}" data-toggle="tooltip" class="btn btn-link btn-primary" data-original-title="Ubah Data"><i class="fa fa-edit"></i></a>
                                             <button title="Remove Data" class="btn btn-link btn-danger" data-toggle="modal" data-target="#delete-{{$item->id}}"><i class="fa fa-times"></i>
                                             </button>
                                         </div>

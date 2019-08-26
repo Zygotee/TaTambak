@@ -15,7 +15,7 @@
                 <div class="wrapper wrapper-login">
                     <div class="container container-login animated fadeIn">
                         <br>
-                        <h3 class="text-center">Sign In</h3>
+                        <h3 class="text-center">Login</h3>
                         <form action="{{route('login')}}" method="post">
                             @csrf
                         <div class="login-form">
@@ -46,7 +46,7 @@
                             </div>
                             <br>
                             <div class="form-action mb-3" style="text-align:center">
-                                <button type="submit" class="btn btn-lg btn-primary btn-rounded btn-login">Sign In</button>
+                                <button type="submit" class="btn btn-lg btn-primary btn-rounded btn-login">Login</button>
                             </div>
                         </div>
                         </form>

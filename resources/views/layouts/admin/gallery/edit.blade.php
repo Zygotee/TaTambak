@@ -31,7 +31,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">Edit Gallery</h4>
+                        <h4 class="card-title">Ubah Galeri</h4>
                     </div>
                 </div>
                 <div class="card-body">
@@ -54,7 +54,7 @@
                                 </div>
                                 <img class="ml-3 mb-2" src="/public/storage/{{$data->foto}}" alt="" style="height:200px">
                             </div>
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="submit" class="btn btn-primary">Ubah</button>
                     </form>
                 </div>
             </div>
