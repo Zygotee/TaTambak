@@ -62,7 +62,7 @@
   <div class="callout container">
     <div class="row">
       <div class="col-md-6 col-12 mb-4 mb-lg-0">
-        <div class="text-job text-muted text-14">Monitoring Data Terakhir</div>
+        <div class="text-job text-muted text-14"><span class="text-primary">Monitoring</span> Data Terakhir</div>
         <div class="h1 mb-0 font-weight-bold"><span class="font-weight-500">Tambak Udang</span> Lokasi X</div>
       </div>
       <div class="col-12 col-sm-4 col-md-2 text-center">
@@ -150,9 +150,10 @@
         </div>
         <div class="col-lg-5 d-none d-lg-block">
           <div class="abs-images">
-            <img src="{{asset('images/')}}" alt="fitur-1" class="img-fluid rounded dark-shadow">
-            <img src="{{asset('images/')}}" alt="fitur-2" class="img-fluid rounded dark-shadow">
-            <img src="{{asset('images/')}}" alt="fitur-3" class="img-fluid rounded dark-shadow">
+            <img src="{{asset('images/fungsi-1.png')}}" alt="fitur-1" class="img-fluid rounded dark-shadow">
+            <img src="{{asset('images/fungsi-2.png')}}" alt="fitur-2" class="img-fluid rounded dark-shadow">
+            <img src="{{asset('images/fungsi-5.png')}}" alt="fitur-3" class="img-fluid rounded dark-shadow" style="height:170px;">
+           
           </div>
         </div>
       </div>
