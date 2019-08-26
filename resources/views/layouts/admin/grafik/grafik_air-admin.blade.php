@@ -9,7 +9,11 @@
         <div class="chart-container">
             <canvas id="lineChart"></canvas>
         </div>
-        <h5><span class="text-primary">Satuan grafik ketinggian air dalam centimeter (cm)</span></h5>
+        <h5>Keterangan :</h5>
+        <ul>
+            <li>x : satuan waktu per menit</li>
+            <li>y : satuan jarak (cm) &#176;C</li>
+        </ul>
     </div>
 </div>
 @endsection

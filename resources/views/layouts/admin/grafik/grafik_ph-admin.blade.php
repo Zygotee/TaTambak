@@ -9,7 +9,11 @@
         <div class="chart-container">
             <canvas id="lineChart"></canvas>
         </div>
-        <h5><span class="text-primary">pH optimal bernilai 6.5 - 8.5</span></h5>
+
+        <h5>Keterangan :</h5>
+        <ul>
+            <li>pH optimal bernilai 6.5 - 8.5</li>
+        </ul>
     </div>
 </div>
 

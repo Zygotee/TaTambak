@@ -9,8 +9,12 @@
         <div class="chart-container">
             <canvas id="lineChart"></canvas>
         </div>
-        <h5><span class="text-primary">Satuan grafik suhu dalam &#176;C</span></h5>
-        <h5><span class="text-primary">Suhu optimum 25 - 30&#176;C</span></h5>
+        <h5>Keterangan :</h5>
+        <ul>
+            <li>x : satuan waktu per menit</li>
+            <li>y : satuan grafik suhu dalam &#176;C</li>
+            <li>Suhu optimum 25 - 30&#176;C</li>
+        </ul>
     </div>
 </div>
 

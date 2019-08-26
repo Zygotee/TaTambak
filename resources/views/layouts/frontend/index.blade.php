@@ -80,62 +80,6 @@
     </div>
   </div>
 
-  {{-- <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <div class="subtitle">
-            BEST ADMIN TEMPLATE OF 2019
-          </div>
-          <h2 class="title">
-            <span class="text-primary">Amazing</span> Features &amp; <span class="text-primary">Flexibility</span> Provided
-          </h2>
-          <p class="lead">
-            Don’t go by our Words, checkout our awesome demos and verify yourself.<br>
-            Save 1000s of hours of designing and coding work as we already did that for you.
-          </p>
-          <div class="products row">
-            <a href="livepreview/examples/demo1" target="_blank" class="col-product col-md-6">
-              <div class="product">
-                <div class="imgbox">
-                  <img src="{{asset('LandingPage/images/demo1.png')}}" class="imgpreview">
-                  <div class="linkpreview">
-                    <div class="btn btn-primary btn-border">Live Preview</div>
-                  </div>
-                </div>
-                <h3 class="name">Light Vertical Dashboard</h3>
-              </div>
-            </a>
-
-            <a href="livepreview/examples/demo2" target="_blank" class="col-product col-md-6">
-              <div class="product">
-                <div class="imgbox">
-                  <img src="{{asset('LandingPage/images/demo2.png')}}" class="imgpreview">
-                  <div class="linkpreview">
-                    <div class="btn btn-primary btn-border">Live Preview</div>
-                  </div>
-                </div>
-                <h3 class="name">Dark Vertical Dashboard</h3>
-              </div>
-            </a>
-
-            <a href="livepreview/examples/demo3" target="_blank" class="col-product col-md-6">
-              <div class="product">
-                <div class="imgbox">
-                  <img src="{{asset('LandingPage/images/demo3.png')}}" class="imgpreview">
-                  <div class="linkpreview">
-                    <div class="btn btn-primary btn-border">Live Preview</div>
-                  </div>
-                </div>
-                <h3 class="name">Minimal Dashboard</h3>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> --}}
-
   <section id="features" class="section-skew">
     <div class="container">
       <div class="row mb-5 text-center">
@@ -153,14 +97,14 @@
               </div>
               <h5>Aktif di Dasar Tambak</h5>
               <p >Bergerak berenang aktif mencari makan
-                dengan kaki jalan pada dasar tambak</p>
+                dengan kaki jalan pada dasar tambak.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
                 <i class="far fa-check-square"></i>
               </div>
               <h5>Posisi Udang</h5>
-              <p style="text-align:justify;">Jika Udang menempel di ranting, posisi kepala selalu di bawah, dan jika ranting digerakkan udang akan cepat menghindar. Sebaliknya udang yang sakit akan menempel terus di ranting meskipun ranting tersebut diangkat ke atas.</p>
+              <p style="text-align:justify;">Jika Udang menempel di ranting, posisi kepala selalu di bawah, dan jika ranting digerakkan udang akan cepat menghindar. Sebaliknya, udang yang sakit akan menempel terus di ranting meskipun ranting tersebut diangkat ke atas.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
@@ -181,7 +125,7 @@
                 <i class="fas fa-check-square"></i>
               </div>
               <h5>Posisi Kepala</h5>
-              <p style="text-align:justify;">Menempel pada batang / ranting rumput atau tali anco dengan posisi kepala di bawah dan akan berenang bila tali onco tersebut di angkat atau digerakkan.</p>
+              <p style="text-align:justify;">Menempel pada batang / ranting rumput atau tali anco dengan posisi kepala di bawah dan akan berenang bila tali onco tersebut diangkat atau digerakkan.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
@@ -196,31 +140,31 @@
     </div>
   </section>
 
-  {{-- <section id="components" class="section-design section-design-right">
+  <section id="components" class="section-design section-design-right">
     <div class="container">
       <div class="row">
         <div class="col-lg-7 pr-lg-5 pr-0">
-          <div class="badge badge-primary mb-3">Clean Components</div>
-          <h2>Focus on your <span class="text-primary">goal</span>, let <span class="text-primary">Atlantis</span> help you to <span class="text-primary">design</span> the dashboard</h2>
-          <p class="lead">Designing the dashboard from scratch without being based on a concept makes your time run out just to think of what components you need. Atlantis has many components and layouts that you need to save your development time, go to bed early.</p>
+          <div class="badge badge-primary mb-3">Fitur-fitur Sistem</div>
+          <h2><span class="text-primary">Monitoring</span> & <span class="text-primary">Controlling</span> Tambak Udang</h2>
+          <p class="lead">Sistem ini digunakan untuk monitoring data sensor dalam bentuk grafik atau datatabel, controlling aktuator, mengelola foto dokumentasi/galeri, dan mengelola akun.</p>
         </div>
         <div class="col-lg-5 d-none d-lg-block">
           <div class="abs-images">
-            <img src="{{asset('LandingPage/landing/component2.png')}}" alt="user flow" class="img-fluid rounded dark-shadow">
-            <img src="{{asset('LandingPage/landing/component1.png')}}" alt="user flow" class="img-fluid rounded dark-shadow">
-            <img src="{{asset('LandingPage/landing/component3.png')}}" alt="user flow" class="img-fluid rounded dark-shadow">
+            <img src="{{asset('images/')}}" alt="fitur-1" class="img-fluid rounded dark-shadow">
+            <img src="{{asset('images/')}}" alt="fitur-2" class="img-fluid rounded dark-shadow">
+            <img src="{{asset('images/')}}" alt="fitur-3" class="img-fluid rounded dark-shadow">
           </div>
         </div>
       </div>
     </div>
-  </section> --}}
+  </section> 
 
   <section id="try" class="section-circle-background">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <h2>Batasan Sistem</h2>
-          <p style="text-align:justify;" class="lead ">Dalam pembudidayaannya, perkembangan Udang Windu sangat dipengaruhi dengan Kualitas Air. Diantaranya adalah suhu air yang dapat mempengaruhi kecepatan metabolisme udang, semakin cepat suhu lingkungan meningkat, maka semakin cepat juga kecepatan metabolisme dari Udang. Secara umum, suhu optimal bagi Udang Windu adalah 25 – 30 &#176;C . Suhu diatas 20 &#176;C masih dianggap baik bagi budidaya Udang. Udang akan kurang aktif apabila suhu air turun di bawah 18 &#176;C dan pada suhu 15 &#176;C atau lebih rendah akan menyebabkan Udang Stress. Derajat Keasaman pun menjadi indikator penting lainnya bagi pembudidayaan Udang Windu. Derajat Keasaman (pH) dapat mempengaruhi metabolisme dan proses fisiologis udang. Optimum pH untuk pertumbuhan Udang Windu adalah 6.5 – 8.5.</p>
+          <p style="text-align:justify;" class="lead ">Dalam pembudidayaannya, perkembangan Udang Windu sangat dipengaruhi dengan Kualitas Air. Diantaranya adalah suhu air yang dapat mempengaruhi kecepatan metabolisme udang, semakin cepat suhu lingkungan meningkat, maka semakin cepat juga kecepatan metabolisme dari Udang. Secara umum, suhu optimal bagi Udang Windu adalah 25 – 30 &#176;C . Suhu diatas 20 &#176;C masih dianggap baik bagi budidaya Udang. Udang akan kurang aktif apabila suhu air turun di bawah 18 &#176;C dan pada suhu 15 &#176;C atau lebih rendah akan menyebabkan Udang stress. Derajat Keasaman pun menjadi indikator penting lainnya bagi pembudidayaan Udang Windu. Derajat Keasaman (pH) dapat mempengaruhi metabolisme dan proses fisiologis udang. Optimum pH untuk pertumbuhan Udang Windu adalah 6.5 – 8.5.</p>
         </div>
         
       </div>
@@ -245,7 +189,7 @@
               <span class="card-icon bg-primary text-white">
                 <i class="fas fa-box-open"></i>
               </span>
-              <span><h6>Pakan Alami</h6>Menumbuhkan pakan alami dengan cara pemupukan susulan (pupuk kendang atau kompos dan pupuk anorganik.</span>
+              <span><h6>Pakan Alami</h6>Menumbuhkan pakan alami dengan cara pemupukan susulan pupuk kandang atau kompos dan pupuk anorganik.</span>
             </li>
             <li>
               <span class="card-icon bg-primary text-white">
@@ -295,7 +239,7 @@
         <div class="col-md-10">
           <h3 class="text-capitalize">Tentang</h3>
           <div class="pr-lg-5">
-            <p>Sistem ini dibuat oleh Bima Fajar Setiawan dengan memanfaatkan data lapangan dari Nur Kholid. Bertujuan agar data lapangan yang dikirim oleh saudara Nur Kholid dapat dimonitor dan dicontrol melalui sistem informasi ini. Kontak kami di:</p>
+            <p>Sistem ini dibuat oleh Bima Fajar Setiawan dengan memanfaatkan data lapangan dari Nur Kholid. Sistem informasi ini bertujuan untuk monitoring  dan controlling data lapangan yang dikirim oleh saudara Nur Kholid. Kontak kami  :</p>
             <p>
                 <i class="fa fa-envelope"></i>
                 bfsetiawan@student.ce.undip.ac.id

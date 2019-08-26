@@ -23,9 +23,11 @@
                         </div>
                     </div>
                 </div>
-                <h4><span class="text-primary">Pengelolaan Kesehatan Udang</span></h4>
-                <p>Suhu optimal harus 25 - 30 &#176; C</p>
-                <p>PH normal 6.5 - 8.5</p>
+                <h4 class="ml-3 mb-1">Pengelolaan Kesehatan Udang :</h4>
+                <ul>
+                    <li>Suhu optimal harus 25 - 30 &#176; C</li>
+                    <li>PH normal 6.5 - 8.5</li>
+                </ul>
             </div>
         </div>
         <div class="col-md-12">
