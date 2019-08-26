@@ -42,13 +42,13 @@
                                 <div class="col-sm-12">
                                     <div class="form-group form-group-default">
                                         <label>Nama</label>
-                                        <input name="nama" type="text" class="form-control" placeholder="fill name" value="{{$data->nama}}" required>
+                                        <input name="nama" type="text" class="form-control" placeholder="fill name" value="{{$data->nama}}">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group form-group-default">
                                         <label for="exampleFormControlFile1">File Foto</label>
-                                        <input name="foto" type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                                        <input name="foto" type="file" class="form-control-file" id="exampleFormControlFile1">
                                     </div>
                                     <p class="small">*max-size: 2MB.</p>
                                 </div>

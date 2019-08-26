@@ -225,18 +225,24 @@ class DashboardController extends Controller
     public function PostEditImages(Request $request)
     {
         $this->validate($request, [
-            'nama' => 'required',
-            'foto' => 'required|mimes:jpeg,jpg,png|max:2048'
+            'foto' => 'mimes:jpeg,jpg,png|max:2048'
         ]);
 
         $foto = $request->file('foto');
-        $filename = $request->nama.'_'.$foto->getClientOriginalName();
-        $request->file('foto')->move('public/storage', $filename);
-        
-        $image = Gallery::find($request->id);
-        $image->nama = $request->nama;
-        $image->foto = $filename;
-        $image->save();
+
+        if ($foto != NULL) {
+            $filename = $request->nama.'_'.$foto->getClientOriginalName();
+            $request->file('foto')->move('public/storage', $filename);
+            
+            $image = Gallery::find($request->id);
+            $image->nama = $request->nama;
+            $image->foto = $filename;
+            $image->save();
+        }else{
+            $update = Gallery::find($request->id);
+            $update->nama = $request->nama;
+            $update->save();
+        }
 
         return back()->with('success', 'Data berhasil diupdate');
     }

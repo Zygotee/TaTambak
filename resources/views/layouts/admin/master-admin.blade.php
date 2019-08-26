@@ -93,7 +93,7 @@
 							<img src="{{ asset('Atlantis/assets/img/profile.jpg')}}" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+							<a aria-expanded="true">
 								<span>
 									{{Auth::user()->nama}}
 									<span class="user-level">{{Auth::user()->role}}</span>
@@ -249,8 +249,8 @@
 	<script src="{{ asset('Atlantis/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
 
 	<!-- jQuery Vector Maps -->
-	<script src="{{ asset('Atlantis/assets/js/plugin/jqvmap/jquery.vmap.min.js') }}"></script>
-	<script src="{{ asset('Atlantis/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js') }}"></script>
+	{{-- <script src="{{ asset('Atlantis/assets/js/plugin/jqvmap/jquery.vmap.min.js') }}"></script> --}}
+	{{-- <script src="{{ asset('Atlantis/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js') }}"></script> --}}
 
 	<!-- Sweet Alert -->
 	{{--  <script src="{{ asset('Atlantis/assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>  --}}
@@ -260,8 +260,8 @@
 	<!-- Atlantis JS -->
 	<script src="{{ asset('Atlantis/assets/js/atlantis.min.js') }}"></script>
 
-	<script src="{{ asset('Atlantis/assets/js/setting-demo.js') }}"></script>
-	<script src="{{ asset('Atlantis/assets/js/demo.js') }}"></script>
+	{{-- <script src="{{ asset('Atlantis/assets/js/setting-demo.js') }}"></script> --}}
+	{{-- <script src="{{ asset('Atlantis/assets/js/demo.js') }}"></script> --}}
 	<script type="text/javascript">
 	var url = ["{{route('monitoring.tabel.airr')}}","{{route('monitoring.tabel.jsonsuhu')}}","{{route('monitoring.tabel.jsonph')}}"]
 	</script>
