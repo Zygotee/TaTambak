@@ -51,5 +51,11 @@
                 aaSorting: [[0, 'desc']]
             });
         });
-    </script> 
+    </script>
+<script>
+ function autoRefreshPage() {
+        window.location = window.location.href;
+        }
+        setInterval('autoRefreshPage()', 5000);
+</script>
 @endsection
