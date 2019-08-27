@@ -56,6 +56,6 @@
  function autoRefreshPage() {
         window.location = window.location.href;
         }
-        setInterval('autoRefreshPage()', 5000);
+        setInterval('autoRefreshPage()', 10000);
 </script>
 @endsection
