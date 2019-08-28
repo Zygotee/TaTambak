@@ -42,7 +42,7 @@ class DashboardController extends Controller
     public function grafikAir()
     {
 
-        $data_jarak = Air::select('nilai', 'waktu')->get();
+        $data_jarak = Air::select('nilai', 'waktu')->limit(10)->get();
         // dd($data_jarak);
         return view(
             'layouts/admin/grafik/grafik_air-admin',
@@ -56,7 +56,7 @@ class DashboardController extends Controller
     }
     public function grafikPh()
     {
-        $data_ph = pH::select('nilai', 'waktu')->get();
+        $data_ph = pH::select('nilai', 'waktu')->limit(10)->get();
 
         return view(
             'layouts/admin/grafik/grafik_ph-admin',
@@ -69,7 +69,7 @@ class DashboardController extends Controller
     }
     public function grafikSuhu()
     {
-        $data_suhu = suhu::select('nilai', 'waktu')->get();
+        $data_suhu = suhu::select('nilai', 'waktu')->limit(10)->get();
         return view(
             'layouts/admin/grafik/grafik_suhu-admin',
             [
