@@ -13,6 +13,7 @@ use App\Suhu;
 use App\Status;
 use App\Gallery;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -42,7 +43,7 @@ class DashboardController extends Controller
     public function grafikAir()
     {
 
-        $data_jarak = Air::select('nilai', 'waktu')->limit(10)->get();
+        $data_jarak = Air::select('nilai', 'waktu')->orderBy('waktu','desc')->limit(30)->get();
         // dd($data_jarak);
         return view(
             'layouts/admin/grafik/grafik_air-admin',
@@ -56,7 +57,7 @@ class DashboardController extends Controller
     }
     public function grafikPh()
     {
-        $data_ph = pH::select('nilai', 'waktu')->limit(10)->get();
+        $data_ph = pH::select('nilai', 'waktu')->orderBy('waktu','desc')->limit(30)->get();
 
         return view(
             'layouts/admin/grafik/grafik_ph-admin',
@@ -69,12 +70,16 @@ class DashboardController extends Controller
     }
     public function grafikSuhu()
     {
-        $data_suhu = suhu::select('nilai', 'waktu')->limit(10)->get();
+        $data_suhu = Suhu::select('nilai','waktu')->orderBy('waktu','desc')->take(10)->get();
+        $reversed = $data_suhu->reverse();
+        $new    = $reversed->all();
+        
+       
         return view(
             'layouts/admin/grafik/grafik_suhu-admin',
             [
-                'suhu' => $data_suhu,
-                'suhuu' => $data_suhu
+                'suhu' => $new,
+                'suhuu' => $new
 
             ]
 
@@ -82,7 +87,7 @@ class DashboardController extends Controller
     }
     public function tabelAir()
     {
-        $data_jarak = Air::select('id', 'waktu', 'nilai')->orderBy('waktu', 'desc')->get();
+        $data_jarak = DB::table('data_jarak')->orderBy('waktu','desc')->get();
         return view(
             'layouts/admin/datatabel/tabel_air-admin',
             [
@@ -93,8 +98,12 @@ class DashboardController extends Controller
 
     public function tabelPh()
     {
-        $data_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'desc')->get();
+        $data_ph = DB::table('data_ph')->orderBy('waktu','desc')->get();
+        // $data_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'desc')->get();
+        // dd($data_ph);
+
         $last_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'desc')->first();
+        
         return view(
             'layouts/admin/datatabel/tabel_ph-admin',
             [
@@ -121,7 +130,7 @@ class DashboardController extends Controller
 
     public function tabelSuhu()
     {
-        $data_suhu = Suhu::select('id','waktu','nilai')->orderBy('waktu', 'desc')->get();
+        $data_suhu = DB::table('data_suhu')->orderBy('waktu', 'desc')->get();
         return view(
             'layouts/admin/datatabel/tabel_suhu-admin',
             [

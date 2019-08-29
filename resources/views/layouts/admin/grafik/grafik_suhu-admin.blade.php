@@ -48,6 +48,7 @@
                     @foreach ($suhuu as $nilai)
                     @php
                         $nilai = $nilai['nilai'];
+                        $celcius = "&#176;C";
                     @endphp
                         '{{"$nilai"}}',
                 @endforeach
@@ -59,6 +60,32 @@
         options: {
             legend: {
                 display: false                
+            },
+            scales: {
+                xAxes: [{
+                gridLines: {
+                    display: true,
+                    color: "gray",
+                    borderDash: [2, 5],
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: "Waktu",
+                    fontColor: "green"
+                }
+                }],
+                yAxes: [{
+                gridLines: {
+                    display: true,
+                    color: "gray",
+                    borderDash: [2, 5],
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: "Suhu (°C)",
+                    fontColor: "green"
+                }
+                }]
             }
         }
     });

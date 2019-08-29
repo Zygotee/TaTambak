@@ -25,7 +25,7 @@
         data: {
             labels: [
                 @foreach ($jarak as $waktu)
-                    "{{date('H:i:s',strtotime($waktu->waktu))}}",
+                    "{{date('h:i:s',strtotime($waktu->waktu))}}",
                 @endforeach
 
             ],
