@@ -27,7 +27,7 @@
         data: {
             labels: [
                 @foreach ($suhu as $waktu)
-                    "{{date('h:i:s',strtotime($waktu->waktu))}}",
+                    "{{date('H:i:s',strtotime($waktu->waktu))}}",
                 @endforeach
 
             ],

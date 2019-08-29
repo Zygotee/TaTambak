@@ -20,7 +20,7 @@
                     @foreach ($pH as $p) 
                     <tr>
                             <td>{{date('Y-m-d', strtotime($p->waktu))}}</td>
-                            <td>{{date('h:i:s', strtotime($p->waktu))}}</td>
+                            <td>{{date('H:i:s', strtotime($p->waktu))}}</td>
                             <td>{{$p->nilai}}</td>
                             @if ($p->nilai < '6.5')
                             <td>Tidak Aman</td>                  
@@ -48,15 +48,21 @@
 <script src= "https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script src= "https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
     <script>
-        $(document).ready(function() {
-			$('#tabel_ph').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'csv', 'excel'
-                ],
-                aaSorting: [[0, 'desc']]
-            });
-        });
+       $(document).ready(function() {
+        $('#tabel_ph').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                title: 'Data Air Excel'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Data Air Pdf '
+            }
+        ]
+    } );
+} );
     </script>
     <script>
         // var table = $('#tabel_ph').DataTable();

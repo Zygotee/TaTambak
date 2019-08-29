@@ -21,7 +21,7 @@
                         @foreach ($suhu as $s) 
                         <tr>
                                 <td>{{date('Y-m-d', strtotime($s->waktu))}}</td>
-                                <td>{{date('h:i:s', strtotime($s->waktu))}}</td>
+                                <td>{{date('H:i:s', strtotime($s->waktu))}}</td>
                                 <td>{{$s->nilai}}</td>
                                 @if ($s->nilai >= 20)
                                 <td>Aman</td>                  
@@ -48,14 +48,20 @@
 <script src= "https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#tabel_suhu').DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                'csv', 'excel'
-                    ],
-            aaSorting: [[0, 'desc']]
-        });
-    });
+        $('#tabel_suhu').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                title: 'Data Suhu Excel'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Data Suhu Pdf'
+            }
+        ]
+    } );
+} );
 </script>
 <script>
 

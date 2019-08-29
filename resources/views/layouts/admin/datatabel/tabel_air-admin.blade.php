@@ -20,7 +20,7 @@
                     @foreach ($jarak as $jarak)
                     <tr>
                         <td>{{date('Y-m-d', strtotime($jarak->waktu))}}</td>
-                        <td>{{date('h:i:s', strtotime($jarak->waktu))}}</td>
+                        <td>{{date('H:i:s', strtotime($jarak->waktu))}}</td>
                         <td>{{$jarak->nilai}}</td>
                     </tr>
                     @endforeach
@@ -43,14 +43,20 @@
 <script src= "https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
     <script>
         $(document).ready(function() {
-			$('#tabel_air').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'csv', 'excel'
-                ],
-                aaSorting: [[0, 'desc']]
-            });
-        });
+        $('#tabel_air').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                title: 'Data Air Excel'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Data Air Pdf'
+            }
+        ]
+    } );
+} );
     </script>
 <script>
  function autoRefreshPage() {
