@@ -66,7 +66,7 @@
                 gridLines: {
                     display: true,
                     color: "gray",
-                    borderDash: [2, 5],
+                    borderDash: [1, 3],
                 },
                 scaleLabel: {
                     display: true,
@@ -78,7 +78,12 @@
                 gridLines: {
                     display: true,
                     color: "gray",
-                    borderDash: [2, 5],
+                    borderDash: [1, 3],
+                },
+                ticks: {
+                    display: true,
+                    suggestedMin: 20,
+                    suggestedMax: 33,
                 },
                 scaleLabel: {
                     display: true,

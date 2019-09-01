@@ -21,6 +21,7 @@
 <script>
     var lineChart = document.getElementById('lineChart').getContext('2d');
     var myLineChart = new Chart(lineChart, {
+        
         type: 'line',
         data: {
             labels: [
@@ -56,9 +57,46 @@
                 
             }]
         },
-        options: {
+            options: {
             legend: {
                 display: false                
+            },
+            scales: {
+                xAxes: [{
+                gridLines: {
+                    display: true,
+                    color: "gray",
+                    borderDash: [1, 3],
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: "Waktu",
+                    fontColor: "green"
+                }
+                }],
+                yAxes: [{                    
+                gridLines: {
+                    display: true,
+                    color: "gray",
+                    borderDash: [1, 3],
+                },
+                ticks: {
+                    display: true,
+                    suggestedMin: 0,
+                    suggestedMax: 30,
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: "Tinggi (cm)",
+                    fontColor: "green"
+                }
+                // ticks: {
+                //     display: true,
+                //     suggestedMin: 10,
+                //     suggestedMax: 30
+                // }
+                }]
+              
             }
         }
     });

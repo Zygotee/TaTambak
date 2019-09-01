@@ -21,7 +21,7 @@
                         @foreach ($suhu as $s) 
                         <tr>
                                 <td>{{date('Y-m-d', strtotime($s->waktu))}}</td>
-                                <td>{{date('h:i:s', strtotime($s->waktu))}}</td>
+                                <td>{{date('H:i:s', strtotime($s->waktu))}}</td>
                                 <td>{{$s->nilai}}</td>
                                 @if ($s->nilai >= 20)
                                 <td>Aman</td>                  

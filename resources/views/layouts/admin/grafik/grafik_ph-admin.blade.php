@@ -52,15 +52,47 @@
                     @endforeach
 
 
-                ],
+                ]
             }]
             
         },
         options: {
             legend: {
                 display: false                
+            },
+            scales: {
+                xAxes: [{
+                gridLines: {
+                    display: true,
+                    color: "gray",
+                    borderDash: [1, 3],
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: "Waktu",
+                    fontColor: "green"
+                }
+                }],
+                yAxes: [{
+                gridLines: {
+                    display: true,
+                    color: "gray",
+                    borderDash: [1, 3],
+                },
+                ticks: {
+                    display: true,
+                    suggestedMin: 0,
+                    suggestedMax: 14,
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: "pH",
+                    fontColor: "green"
+                }
+                }]
             }
-        }
+        }           
+        
     });
 </script>
 <script>
