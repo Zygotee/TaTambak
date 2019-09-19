@@ -1,6 +1,12 @@
 @extends('layouts/admin/master-admin')
 
 @section('content')
+@if($selisih > 12)
+<div class="alert alert-danger" role="alert">
+        <h3>Alat Mati!</h3>Terakhir Update: {{($updatewaktu)}}
+</div>
+@endif
+
 <div class="card border">
     <div class="card-header">
         <div class="card-title">Grafik Suhu</div>
@@ -64,7 +70,7 @@
             scales: {
                 xAxes: [{
                 gridLines: {
-                    display: true,
+                    display: false,
                     color: "gray",
                     borderDash: [1, 3],
                 },
@@ -76,7 +82,7 @@
                 }],
                 yAxes: [{
                 gridLines: {
-                    display: true,
+                    display: false,
                     color: "gray",
                     borderDash: [1, 3],
                 },

@@ -96,7 +96,7 @@
                 <i class="fas fa-check"></i>
               </div>
               <h5>Aktif di Dasar Tambak</h5>
-              <p >Bergerak berenang aktif mencari makan
+              <p >Bergerak mencari makan
                 dengan kaki jalan pada dasar tambak.</p>
             </div>
             <div class="feature">
@@ -111,7 +111,7 @@
                 <i class="far fa-check-circle"></i>
               </div>
               <h5>Aktivitas Berenang</h5>
-              <p>Bergerak berenang aktif mencari makan dengan kaki jalan pada dasar tambak.</p>
+              <p>Bergerak berenang aktif.</p>
             </div>
             <div class="feature">
               <div class="feature-icon">
@@ -164,7 +164,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
-          <h2>Batasan Sistem</h2>
+          <h2>Batasan Perawatan</h2>
           <p style="text-align:justify;" class="lead ">Dalam pembudidayaannya, perkembangan Udang Windu sangat dipengaruhi dengan Kualitas Air. Diantaranya adalah suhu air yang dapat mempengaruhi kecepatan metabolisme udang, semakin cepat suhu lingkungan meningkat, maka semakin cepat juga kecepatan metabolisme dari Udang. Secara umum, suhu optimal bagi Udang Windu adalah 25 – 30 &#176;C . Suhu diatas 20 &#176;C masih dianggap baik bagi budidaya Udang. Udang akan kurang aktif apabila suhu air turun di bawah 18 &#176;C dan pada suhu 15 &#176;C atau lebih rendah akan menyebabkan Udang stress. Derajat Keasaman pun menjadi indikator penting lainnya bagi pembudidayaan Udang Windu. Derajat Keasaman (pH) dapat mempengaruhi metabolisme dan proses fisiologis udang. Optimum pH untuk pertumbuhan Udang Windu adalah 6.5 – 8.5.</p>
         </div>
         

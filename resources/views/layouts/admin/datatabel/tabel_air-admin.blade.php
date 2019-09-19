@@ -1,6 +1,11 @@
 @extends('layouts/admin/master-admin')
 
 @section('content')
+@if($max_air->nilai > 0)
+<div class="alert alert-success" role="alert">
+    <h3>Kondisi Air!</h3>Terakhir Update: {{($max_air->waktu)}}<br> Kondisi Air : {{($max_air->nilai)}}
+@endif
+</div>
 <div class="card">
     <div class="card-header">
         <h4 class="card-title">Tabel Pengamatan Air</h4>

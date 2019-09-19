@@ -43,3 +43,6 @@ Route::get('/user', 'DashboardController@ReadUser')->name('user.read');
 Route::post('/user/post', 'DashboardController@PostUser')->name('user.post');
 Route::post('/user/edit', 'DashboardController@EditUser')->name('user.edit');
 Route::post('/user/delete', 'DashboardController@DeleteUser')->name('user.delete');
+//maintenance
+Route::get('/maintenance', 'DashboardController@Maintenance')->name('hapus-db');
+Route::post('/maintenance/delete-db', 'DashboardController@DeleteDB')->name('hapus-data');

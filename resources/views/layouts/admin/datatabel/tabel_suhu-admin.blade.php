@@ -1,6 +1,19 @@
 @extends('layouts/admin/master-admin')
 
 @section('content')
+@if($max_suhu->nilai < 20)
+<div class="alert alert-danger" role="alert">
+    <h3>Kondisi Suhu Tidak Aman!</h3>Terakhir Update: {{($max_suhu->waktu)}}<br> Kondisi Suhu : {{($max_suhu->nilai)}}
+</div>
+@elseif($max_suhu->nilai > 30)
+<div class="alert alert-danger" role="alert">
+    <h3>Kondisi Suhu Aman!</h3>Terakhir Update: {{($max_suhu->waktu)}}<br> Kondisi Suhu : {{($max_suhu->nilai)}}
+</div>
+@else
+<div class="alert alert-success" role="alert">
+        <h3>Kondisi Suhu Aman!</h3>Terakhir Update: {{($max_suhu->waktu)}}<br> Kondisi Suhu : {{($max_suhu->nilai)}}
+</div>
+@endif
 <div class="card">
     <div class="card-header">
         <h4 class="card-title">Tabel pengamatan suhu</h4>
@@ -65,48 +78,56 @@
 </script>
 <script>
 
-    window.setInterval("update()", 10000);
-        var update = function(){
-            $.ajax({
-				type: 'get',
-                url: url[1],
-				success:function(data) {
-                    console.log(data);
-                        if(data['nilai'] < 20)
-                    {
-                        var text = data['nilai'].toString();
-                swal({
-                    title: "Suhu dibawah normal",
-                    text: text,
-                    icon : "error",
-                    buttons: true,
-                    dangerMode: true,
-                    }).then((data) => {
-                    location.reload();
-                    });;
-                }
-                else if(data['nilai'] > 30) {
-                        var text = data['nilai'].toString();
-                        swal({
-                            title: "Suhu diatas normal",
-                            text: text,
-                            icon : "error",
-                            buttons: true,
-                            dangerMode: true,
-                        }).then((data) => {
-                                location.reload();
-                            });
-                    }
-                    else{
-                        alert('nilai aman');
-                        location.reload();
-                    }
+    // window.setInterval("update()", 10000);
+    //     var update = function(){
+    //         $.ajax({
+	// 			type: 'get',
+    //             url: url[1],
+	// 			success:function(data) {
+    //                 console.log(data);
+    //                     if(data['nilai'] < 20)
+    //                 {
+    //                     var text = data['nilai'].toString();
+    //             swal({
+    //                 title: "Suhu dibawah normal",
+    //                 text: text,
+    //                 icon : "error",
+    //                 buttons: true,
+    //                 dangerMode: true,
+    //                 }).then((data) => {
+    //                 location.reload();
+    //                 });;
+    //             }
+    //             else if(data['nilai'] > 30) {
+    //                     var text = data['nilai'].toString();
+    //                     swal({
+    //                         title: "Suhu diatas normal",
+    //                         text: text,
+    //                         icon : "error",
+    //                         buttons: true,
+    //                         dangerMode: true,
+    //                     }).then((data) => {
+    //                             location.reload();
+    //                         });
+    //                 }
+    //                 else{
+    //                     alert('nilai aman');
+    //                     location.reload();
+    //                 }
                 
-                    console.log(data['nilai'])
+    //                 console.log(data['nilai'])
    
-               }
-		    });
-        };
+    //            }
+	// 	    });
+    //     };
 </script>
+<script>
+function autoRefreshPage() {
+    window.location = window.location.href;
+    }
+    setInterval('autoRefreshPage()', 10000);
+
+</script>
+
 
 @endsection

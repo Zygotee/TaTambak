@@ -1,6 +1,12 @@
 @extends('layouts/admin/master-admin')
 
 @section('content')
+@if($datajarak > 12)
+<div class="alert alert-danger" role="alert">
+    <h3>Alat Mati!</h3>Terakhir Update: {{($updatewaktu)}}
+</div>
+@endif
+
 <div class="card border">
     <div class="card-header">
         <div class="card-title">Grafik Ketinggian Air</div>
@@ -26,7 +32,7 @@
         data: {
             labels: [
                 @foreach ($jarak as $waktu)
-                    "{{date('h:i:s',strtotime($waktu->waktu))}}",
+                    "{{date('H:i:s',strtotime($waktu->waktu))}}",
                 @endforeach
 
             ],
@@ -64,7 +70,7 @@
             scales: {
                 xAxes: [{
                 gridLines: {
-                    display: true,
+                    display: false,
                     color: "gray",
                     borderDash: [1, 3],
                 },
@@ -76,25 +82,20 @@
                 }],
                 yAxes: [{                    
                 gridLines: {
-                    display: true,
+                    display: false,
                     color: "gray",
                     borderDash: [1, 3],
                 },
                 ticks: {
                     display: true,
                     suggestedMin: 0,
-                    suggestedMax: 30,
+                    suggestedMax: 50,
                 },
                 scaleLabel: {
                     display: true,
                     labelString: "Tinggi (cm)",
                     fontColor: "green"
                 }
-                // ticks: {
-                //     display: true,
-                //     suggestedMin: 10,
-                //     suggestedMax: 30
-                // }
                 }]
               
             }

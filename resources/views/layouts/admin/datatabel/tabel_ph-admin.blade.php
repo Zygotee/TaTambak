@@ -1,6 +1,19 @@
 @extends('layouts/admin/master-admin')
 
 @section('content')
+@if($max_ph->nilai < 6.5)
+<div class="alert alert-danger" role="alert">
+    <h3>Kondisi PH Tidak Aman!</h3>Terakhir Update: {{($max_ph->waktu)}}<br> Kondisi PH : {{($max_ph->nilai)}}
+</div>
+@elseif($max_ph->nilai > 8.5)
+<div class="alert alert-danger" role="alert">
+    <h3>Kondisi PH Aman!</h3>Terakhir Update: {{($max_ph->waktu)}}<br> Kondisi PH : {{($max_ph->nilai)}}
+</div>
+@else
+<div class="alert alert-success" role="alert">
+        <h3>Kondisi PH Aman!</h3>Terakhir Update: {{($max_ph->waktu)}}<br> Kondisi PH : {{($max_ph->nilai)}}
+</div>
+@endif
 <div class="card">
     <div class="card-header">
         <h4 class="card-title">Tabel pengamatan pH</h4>
@@ -66,46 +79,60 @@
     </script>
     <script>
         // var table = $('#tabel_ph').DataTable();
-        window.setInterval("update()", 10000);
-        var update = function(){
-            $.ajax({
-				type: 'get',
-                url: url[2],
-                success:function(data) {                   
-                    var angka = parseFloat(data['nilai']);
-                    console.log(angka);
-                    if(angka < 6.5) {
-                        var text = data['nilai'].toString();
-                        swal({
-                            title: "Konidisi pH tidak normal",
-                            text: text,
-                            icon : "error",
-                            buttons: true,
-                            dangerMode: true,
-                        }).then((data) => {
-                                location.reload();
-                            });
-                    }
-                    else if(angka > 8.5) {
-                        var text = data['nilai'].toString();
-                        swal({
-                            title: "Konidisi pH tidak normal",
-                            text: text,
-                            icon : "error",
-                            buttons: true,
-                            dangerMode: true,
-                        }).then((data) => {
-                                location.reload();
-                            });
-                    }
-                    else{
-                        alert('nilai aman');
-                        location.reload();
-                    }
-                }
-            })
-        }
+        // window.setInterval("update()", 10000);
+        // var update = function(){
+        //     $.ajax({
+		// 		type: 'get',
+        //         url: url[2],
+        //         success:function(data) {                   
+        //             var angka = parseFloat(data['nilai']);
+        //             console.log(angka);
+        //             if(angka < 6.5) {
+        //                 var text = data['nilai'].toString();
+        //                 swal({
+        //                     title: "Konidisi pH tidak normal",
+        //                     text: text,
+        //                     icon : "error",
+        //                     buttons: true,
+        //                     dangerMode: true,
+        //                 }).then((data) => {
+        //                         location.reload();
+        //                     });
+        //             }
+        //             else if(angka > 8.5) {
+        //                 var text = data['nilai'].toString();
+        //                 swal({
+        //                     title: "Konidisi pH tidak normal",
+        //                     text: text,
+        //                     icon : "error",
+        //                     buttons: true,
+        //                     dangerMode: true,
+        //                 }).then((data) => {
+        //                         location.reload();
+        //                     });
+        //             }
+        //             else{
+        //                 var text = data['nilai'].toString();
+        //                 swal({
+        //                     title: "Konidisi pH Normal",
+        //                     text: text,
+        //                     icon : "success",
+        //                     buttons: false,
+        //                 }).then((data) => {
+        //                         location.reload();
+        //                     });
+        //             }
+        //         }
+        //     })
+        // }
     
     </script>
+
+<script>
+        function autoRefreshPage() {
+            window.location = window.location.href;
+            }
+            setInterval('autoRefreshPage()', 10000);
+</script>
 
 @endsection

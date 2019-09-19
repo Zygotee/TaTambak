@@ -42,15 +42,24 @@ class DashboardController extends Controller
     public function grafikAir()
     {
 
-        $data_jarak = Air::select('nilai', 'waktu')->orderBy('waktu','desc')->take(10)->get();
+        $data_jarak = Air::select('nilai', 'waktu')->orderBy('waktu','desc')->take(25)->get();
         $reversed = $data_jarak->reverse();
         $new = $reversed->all();
+
+        $max_date = Air::max('waktu');
+        $max = date('Y-m-d H:i:s',strtotime($max_date));
+        $now = date('Y-m-d H:i:s');
+        $dif = strtotime($now)-strtotime($max);
+        $hours = floor($dif / (60 * 60));
+        $seconds = $dif - $hours * (60 * 60);
 
         return view(
             'layouts/admin/grafik/grafik_air-admin',
             [
                 'jarak' => $new,
-                'jar' => $new
+                'jar' => $new,
+                'datajarak' =>$seconds,
+                'updatewaktu' =>$max
 
             ]
 
@@ -58,58 +67,86 @@ class DashboardController extends Controller
     }
     public function grafikPh()
     {
-        $data_ph = pH::select('nilai', 'waktu')->orderBy('waktu','desc')->take(10)->get();
+        $data_ph = pH::select('nilai', 'waktu')->orderBy('waktu','desc')->take(25)->get();
         $reversed =  $data_ph->reverse();
         $new = $reversed->all();
+
+        $max_date = pH::max('waktu');
+        $max = date('Y-m-d H:i:s',strtotime($max_date));
+        $now = date('Y-m-d H:i:s');
+        $dif = strtotime($now)-strtotime($max);
+        $hours = floor($dif / (60 * 60));
+        $seconds = $dif - $hours * (60 * 60);
 
         return view(
             'layouts/admin/grafik/grafik_ph-admin',
             [
                 'ph' => $new,
-                'phh' => $new
+                'phh' => $new,
+                'dataph' =>$seconds,
+                'updatewaktu' =>$max
             ]
 
         );
     }
     public function grafikSuhu()
     {
-        $data_suhu = Suhu::select('nilai','waktu')->orderBy('waktu','desc')->take(10)->get();
+        $data_suhu = Suhu::select('nilai','waktu')->orderBy('waktu','desc')->take(25)->get();
         $reversed = $data_suhu->reverse();
         $new    = $reversed->all();
         
-       
+        $max_date = Suhu::max('waktu');
+        $max = date('Y-m-d H:i:s',strtotime($max_date));
+        $now = date('Y-m-d H:i:s');
+        $dif = strtotime($now)-strtotime($max);
+        $hours = floor($dif / (60 * 60));
+        $seconds = $dif - $hours * (60 * 60);
+
         return view(
             'layouts/admin/grafik/grafik_suhu-admin',
             [
                 'suhu' => $new,
-                'suhuu' => $new
-
+                'suhuu' => $new,
+                'selisih' => $seconds,
+                'updatewaktu' =>$max
             ]
 
         );
     }
     public function tabelAir()
     {
-        $data_jarak = DB::table('data_jarak')->orderBy('waktu','asc')->get();
+        $date = \Carbon\Carbon::today()->subDays(0);
+
+        $data_jarak = DB::table('data_jarak')->where('waktu', '>=', $date)->orderBy('id','desc')->get();
+        $max_air = Air::orderBy('id','desc')->first();
+
+        // $data_jarak = DB::table('data_jarak')->orderBy('waktu','asc')->get();
         return view(
             'layouts/admin/datatabel/tabel_air-admin',
             [
-                'jarak' => $data_jarak
+                'jarak' => $data_jarak,
+                'max_air' => $max_air
             ]
         );
     }
 
     public function tabelPh()
     {
-        $data_ph = DB::table('data_ph')->orderBy('waktu','asc')->get();
+        $date = \Carbon\Carbon::today()->subDays(0);
 
-        $last_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'asc')->first();
+        $data_ph = DB::table('data_ph')->where('waktu', '>=', $date)->orderBy('id','desc')->get();
+        $max_ph = pH::orderBy('id','desc')->first();
+
+        // $data_ph = DB::table('data_ph')->orderBy('waktu','asc')->get();
+
+        // $last_ph = pH::select('id','waktu','nilai')->orderBy('waktu', 'asc')->first();
         
         return view(
             'layouts/admin/datatabel/tabel_ph-admin',
             [
                 'pH' => $data_ph,
-                'last_pH' => $last_ph
+                'max_ph' => $max_ph
+                // 'last_pH' => $last_ph
 
             ]
         );
@@ -131,11 +168,19 @@ class DashboardController extends Controller
 
     public function tabelSuhu()
     {
-        $data_suhu = DB::table('data_suhu')->orderBy('waktu', 'asc')->get();
+
+        $date = \Carbon\Carbon::today()->subDays(0);
+
+        $data_suhu = DB::table('data_suhu')->where('waktu', '>=', $date)->orderBy('id','desc')->get();
+        $max_suhu = Suhu::orderBy('id','desc')->first();
+
+
+        // $data_suhu = DB::table('data_suhu')->orderBy('waktu', 'asc')->get();
         return view(
             'layouts/admin/datatabel/tabel_suhu-admin',
             [
-                'suhu' => $data_suhu
+                'suhu' => $data_suhu,
+                'max_suhu' => $max_suhu
 
             ]
 
@@ -298,6 +343,34 @@ class DashboardController extends Controller
 
         return back()->with('success', 'User berhasil dihapus');
 
+    }
+    public function Maintenance()
+    {
+        $bulan = Air::select(DB::raw('YEAR(waktu) year, MONTH(waktu) month'))
+        ->groupby('year','month')
+        ->get();
+
+        return view('layouts/admin/maintenance/maintenance', compact('bulan'));
+    }
+
+    public function DeleteDB(Request $request)
+    {
+        if($request->submit != null){
+            if($request->bulan == null){
+                return redirect()->back()->with('error','error');
+            }
+            else{
+                for($i=0; $i<count($request->bulan); $i++){
+                    $data_air = Air::whereMonth('waktu',$request->bulan[$i])->whereYear('waktu',$request->tahun);
+                    $data_air->delete();
+                    $data_ph = pH::whereMonth('waktu',$request->bulan[$i])->whereYear('waktu',$request->tahun);
+                    $data_ph->delete();
+                    $data_suhu = Suhu::whereMonth('waktu',$request->bulan[$i])->whereYear('waktu',$request->tahun);
+                    $data_suhu->delete();
+                }
+            }
+            return redirect()->back()->with('msg','Success');
+        }
     }
    
 }
