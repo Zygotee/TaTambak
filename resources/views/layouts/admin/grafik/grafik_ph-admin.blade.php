@@ -3,7 +3,7 @@
 @section('content')
 @if($dataph > 12)
 <div class="alert alert-danger" role="alert">
-        <h3>Alat Mati!</h3>Terakhir Update: {{($updatewaktu)}}
+        <h3>Gagal terhubung dengan broker!</h3>Terakhir Update: {{($updatewaktu)}}
 </div>
 @endif
 

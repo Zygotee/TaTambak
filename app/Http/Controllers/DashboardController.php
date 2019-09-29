@@ -115,9 +115,9 @@ class DashboardController extends Controller
     }
     public function tabelAir()
     {
-        $date = \Carbon\Carbon::today()->subDays(0);
+        $date = \Carbon\Carbon::today()->subDays(10);
 
-        $data_jarak = DB::table('data_jarak')->where('waktu', '>=', $date)->orderBy('id','desc')->get();
+        $data_jarak = DB::table('data_jarak')->where('waktu', '>=', $date)->orderBy('id','asc')->get();
         $max_air = Air::orderBy('id','desc')->first();
 
         // $data_jarak = DB::table('data_jarak')->orderBy('waktu','asc')->get();
@@ -132,9 +132,9 @@ class DashboardController extends Controller
 
     public function tabelPh()
     {
-        $date = \Carbon\Carbon::today()->subDays(0);
+        $date = \Carbon\Carbon::today()->subDays(10);
 
-        $data_ph = DB::table('data_ph')->where('waktu', '>=', $date)->orderBy('id','desc')->get();
+        $data_ph = DB::table('data_ph')->where('waktu', '>=', $date)->orderBy('id','asc')->get();
         $max_ph = pH::orderBy('id','desc')->first();
 
         // $data_ph = DB::table('data_ph')->orderBy('waktu','asc')->get();
@@ -169,7 +169,7 @@ class DashboardController extends Controller
     public function tabelSuhu()
     {
 
-        $date = \Carbon\Carbon::today()->subDays(0);
+        $date = \Carbon\Carbon::today()->subDays(10);
 
         $data_suhu = DB::table('data_suhu')->where('waktu', '>=', $date)->orderBy('id','desc')->get();
         $max_suhu = Suhu::orderBy('id','desc')->first();
