@@ -16,7 +16,7 @@ Route::get('/about', 'FrontendController@about')->name('landingpage.about');
 //Back End
 Auth::routes();
 //admininstrator
-Route::get('/home', 'DashboardController@index')->name('home.read');
+Route::get('/home', 'DashboardController@index')->name('home.read')->middleware('auth');
 //monitoring data tabel
 Route::get('monitoring/datatabel/air', 'DashboardController@tabelAir')->name('monitoring.tabel.air');
 Route::get('monitoring/datatabel/airr', 'DashboardController@tabelAirr')->name('monitoring.tabel.airr');

@@ -198,12 +198,12 @@
 								<p>Pengguna</p>
 							</a>
 						</li>
-						<li class="nav-item {{request()->is('maintenance') ? 'active' : ''}}">
+						{{-- <li class="nav-item {{request()->is('maintenance') ? 'active' : ''}}">
 								<a href="{{route('hapus-db')}}">
 									<i class="fas fa-cogs"></i>
 									<p>Maintenance</p>
 								</a>
-							</li>
+							</li> --}}
 						@endif
 					</ul>
 				</div>
