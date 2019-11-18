@@ -67,11 +67,11 @@
         buttons: [
             {
                 extend: 'excelHtml5',
-                title: 'Data Air Excel'
+                title: 'Data ph Excel'
             },
             {
                 extend: 'pdfHtml5',
-                title: 'Data Air Pdf '
+                title: 'Data ph Pdf '
             }
         ]
     } )

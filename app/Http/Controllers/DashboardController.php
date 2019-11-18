@@ -132,7 +132,7 @@ class DashboardController extends Controller
 
     public function tabelPh()
     {
-        $date = \Carbon\Carbon::today()->subDays(30);
+        $date = \Carbon\Carbon::today()->subDays(3);
 
         $data_ph = DB::table('data_ph')->where('waktu', '>=', $date)->orderBy('id','asc')->get();
         $max_ph = pH::orderBy('id','desc')->first();
